@@ -1,0 +1,3091 @@
+#include <iostream>       // ||     || |     |    |||||  |||||    |||    ||||| |||||       |      ||     ||
+#include <stdlib.h>       // | |   | |  |   |     |    | |    |  |   |  |      |    |     | |     | |   | |
+#include <conio.h>        // |  | |  |   | |      |||||  |||||  |     | |      |||||     |   |    |  | |  |
+#include <iomanip>        // |   |   |    |       |      | |    |     | | |||| | |     |||||||||  |   |   |
+#include <stdio.h>        // |       |    |       |      |  |    |   |  |    | |  |    |       |  |       |
+#include <math.h>         // |       |    |       |      |   |    |||   |||||  |   |  |         | |       |
+#include <string>
+#include <time.h>
+#include <vector>
+#include <fstream>
+#include <cstdio>
+#include <Windows.h>
+#include <MMSystem.h>
+using namespace std;
+//-----------------------------------------------------------------------
+void input();
+void searchname();
+void searchage();
+void searchsalary();
+void quit();
+void quitMenu();
+void displayall();
+void search();
+void deleteFile();
+void editFile();
+//-----------------------------------------------------------------------
+void FillVector(vector<int>&);
+void PrintVector(const vector<int>&);
+void ReverseVector(const vector<int>&);
+void PrintEvens(const vector<int>&);
+void PrintOdds(const vector<int>&);
+void ReplaceVector(vector<int>&);
+//-----------------------------------------------------------------------
+void mainFunction();
+void mainFunctionWithMenu();
+//-----------------------------------------------------------------------
+void programMenuFunction();
+void programStatistics();
+void topSecretThings();
+void vectorDirectoryV1();
+void vectorDirectoryV2();
+void vectorDirectory001();
+void vectorDirectory002();
+void miniGames();
+void Exercices1();
+void functionsWith2Variables();
+void functionsWith2Variables1();
+void comparationWith2Numbers();
+void dialogWithConsole();
+void Explosion();
+void oddsAndEvens();
+void numbersWith5Digits();
+void stringWithNumbers();
+void factorialNumbers();
+void listenToMusic();
+void listenMusic();
+void listenToMusic1();
+void listenMusic1();
+void musicPlayList();
+void musicPlayListWithMenu();
+void quitMusicPlayer();
+void bigExplosion();
+void listenToMusic2();
+void listenMusic2();
+//-----------------------------------------------------------------------
+void inputWithMenu();
+void searchWithMenu();
+void searchnameWithMenu();
+void searchageWithMenu();
+void searchsalaryWithMenu();
+void displayallWithMenu();
+void deleteFileWithMenu();
+void editFileWithMenu();
+void vectorDirectory001();
+//-----------------------------------------------------------------------
+void restartProgram();
+void quitProgram();
+//-----------------------------------------------------------------------
+const string PasswordTime()
+{
+    time_t now=time(0);
+    struct tm tstruct;
+    char buf[80];
+    tstruct=*localtime(&now);
+    strftime(buf,sizeof(buf),"%X",&tstruct);
+    return buf;
+}
+//-----------------------------------------------------------------------
+const string PasswordDate()
+{
+    time_t now=time(0);
+    struct tm tstruct;
+    char buf[80];
+    tstruct=*localtime(&now);
+    strftime(buf,sizeof(buf),"%m-%d-%Y",&tstruct);
+    return buf;
+}
+//-----------------------------------------------------------------------
+const string CurrentDateAndTime()
+{
+    time_t now=time(0);
+    struct tm tstruct;
+    char buf[80];
+    tstruct=*localtime(&now);
+    strftime(buf,sizeof(buf),"\n [The date] %Y-%m-%d \n [The time] %X",&tstruct);
+    return buf;
+}
+//-----------------------------------------------------------------------
+double operate(double a,double b)
+{
+    return (a/b);
+}
+//-----------------------------------------------------------------------
+int foo[]= {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
+int n,result=0;
+//-----------------------------------------------------------------------
+int main()
+{
+    system("COLOR 0F");
+    system("title [Database Program Advanced]");
+    string DataBasePass;
+    cout<<" ";
+    cin>>DataBasePass;
+    if(DataBasePass!="1")
+    {
+        cout<<"\n [WARNING]: SYSTEM IS TRYING TO BE HACKED"<<endl;
+        PlaySound(TEXT("allahu.wav"), NULL, SND_SYNC);
+        cout<<"\n [WINDOWS PROTECTION]: PROGRAM SHUT DOWNED"<<endl;
+        PlaySound(TEXT("shutdown.wav"), NULL, SND_SYNC);
+        system("pause");
+        return 0;
+    }
+    else
+    {
+        cout<<"\n [DATABASE PROGRAM]: [DataBasePassword: HACKED]"<<endl;
+        PlaySound(TEXT("shift.wav"), NULL, SND_SYNC);
+    }
+    string z1,z2;
+    int z4,date,datepass,time,timepass;
+    cout<<"\n";
+    cout<<"\n";
+    cout<<"\n [TO GET FULL ACCES YOU NEED TO HACK THIS PROGRAM BY STRIKING THE PROTECTION SYSTEM]"<<endl;
+    cout<<"\n";
+    cout<<"\n This date "<<"["<<PasswordDate()<<"]"<<" is PIN code"<<endl;
+    cout<<"\n Enter PIN code: ";
+    cin>>datepass;
+    cout<<"\n Enter PIN code[Again]: ";
+    cin>>date;
+    if(datepass==date)
+    {
+        cout<<"\n Current password date correct"<<endl;
+    }
+    if(datepass!=date)
+    {
+        cout<<"\n Current password date incorrect, the program shut downed"<<endl;
+        PlaySound(TEXT("error.wav"), NULL, SND_SYNC);
+        PlaySound(TEXT("shutdown.wav"), NULL, SND_SYNC);
+        return 0;
+    }
+//-------------------------------------------------------------------------
+    cout<<"\n";
+    cout<<"\n";
+    cout<<"\n This time "<<"["<<PasswordTime()<<"]"<<" is the second PIN code"<<endl;
+    cout<<"\n Enter second PIN code: ";
+    cin>>timepass;
+    cout<<"\n Enter second PIN code[Again]: ";
+    cin>>time;
+    if(timepass==time)
+    {
+        cout<<"\n Current password time correct"<<endl;
+    }
+    if(timepass!=time)
+    {
+        cout<<"\n Current password time incorrect, the program shut downed"<<endl;
+        //PlaySound(TEXT("error.wav"), SND, SND_SYNC);
+        PlaySound(TEXT("shutdown.wav"), NULL, SND_SYNC);
+        return 0;
+    }
+    cout<<"\n";
+//-------------------------------------------------------------------------
+    cout<<"\n";
+    cout<<"\n Password [1]: ";
+    cin>>z1;
+    if(z1=="1")
+    {
+        cout<<"\n Password [1] correct"<<endl;
+    }
+    if(z1!="1")
+    {
+        cout<<"\n [ERROR] Password [1] incorrect, program shut downed"<<endl;
+        PlaySound(TEXT("error.wav"), NULL, SND_SYNC);
+        PlaySound(TEXT("shutdown.wav"), NULL, SND_SYNC);
+        return 0;
+    }
+//------------------------------------------------------------------------
+    cout<<"\n Password [2]: ";
+    cin>>z2;
+    if(z2=="1")
+    {
+        cout<<"\n Password [2] correct"<<endl;
+    }
+    if(z2!="1")
+    {
+        cout<<"\n [ERROR] Password [2] incorrect, program shut downed"<<endl;
+        PlaySound(TEXT("error.wav"), NULL, SND_SYNC);
+        PlaySound(TEXT("shutdown.wav"), NULL, SND_SYNC);
+        return 0;
+    }
+//------------------------------------------------------------------------
+    cout<<"\n Password [3]: ";
+    cin>>z4;
+    if(z4==1)
+    {
+        cout<<"\n Password [3] correct"<<endl;
+    }
+    if(z4!=1)
+    {
+        cout<<"\n [ERROR] Password [3] incorrect, program shut downed"<<endl;
+        PlaySound(TEXT("error.wav"), NULL, SND_SYNC);
+        PlaySound(TEXT("shutdown.wav"), NULL, SND_SYNC);
+        return 0;
+    }
+//------------------------------------------------------------------------
+    cout<<"\n";
+    cout<<"\n [ALL PASSWORDS CORRECT, PROGRAM HACKED]"<<endl;
+    PlaySound(TEXT("shift.wav"), NULL, SND_SYNC);
+    PlaySound(TEXT("shift.wav"), NULL, SND_SYNC);
+    PlaySound(TEXT("shift.wav"), NULL, SND_SYNC);
+//-----------------------------------------------------------------------
+    cout<<"\n";
+    cout<<"\n";
+    cout<<"\n";
+    cout<<"\n";
+//-----------------------------------------------------------------------
+    cout<<"\                                 [WELCOME TO]"<<endl;
+    cout<<"\n ------------------------------------------------------------------------------"<<endl;
+    cout<<"\n";
+    cout<<" ||     || |     |    |||||  |||||    |||    ||||| |||||       |      ||     ||"<<endl;
+    cout<<" | |   | |  |   |     |    | |    |  |   |  |      |    |     | |     | |   | |"<<endl;
+    cout<<" |  | |  |   | |      |||||  |||||  |     | |      |||||     |   |    |  | |  |"<<endl;
+    cout<<" |   |   |    |       |      | |    |     | | |||| | |     |||||||||  |   |   |"<<endl;
+    cout<<" |       |    |       |      |  |    |   |  |    | |  |    |       |  |       |"<<endl;
+    cout<<" |       |    |       |      |   |    |||   |||||  |   |  |         | |       |"<<endl;
+    cout<<"\n ------------------------------------------------------------------------------"<<endl;
+    cout<<"\n";
+    cout<<"\                                  [THIS PROGRAM IS DEVELOPED BY (UNKNOWN NAME)] "<<endl;
+    cout<<"\n";
+    cout<<" ------------------------------------------------------------------------------"<<endl;
+    cout<<"\n";
+    PlaySound(TEXT("welcome_back.wav"), NULL, SND_SYNC);
+    PlaySound(TEXT("hohoho.wav"), NULL, SND_SYNC);
+//-----------------------------------------------------------------------
+    string answer,answerpass,answer1,answerpass1,answer2,answerpass2,answer3,answerpass3,answerpass4,answerpass5;
+    cout<<" [Current date and time] "<<CurrentDateAndTime()<<endl;
+//-----------------------------------------------------------------------
+    string answerMenu;
+    cout<<"\n";
+    cout<<"\n [Show {PROGRAM MENU} or Skip?]: ";
+    cin>>answerMenu;
+    if(answerMenu=="Show")
+    {
+        programMenuFunction();
+    }
+    else
+    {
+        cout<<"\n [System]: {PROGRAM MENU} Succesfully Skiped!"<<endl;
+    }
+//-----------------------------------------------------------------------
+    string song;
+    cout<<"\n [Show {MUSIC PlayList (0)} or Skip?]: ";
+    cin>>song;
+    if(song=="Show")
+    {
+        musicPlayListWithMenu();
+    }
+    else
+    {
+        cout<<"\n [System]: {MUSIC PlayList (0)} Succesfully Skiped!"<<endl;
+    }
+//-----------------------------------------------------------------------
+    cout<<"\n ------------------------------------------------------------------------------"<<endl;
+    cout<<"\n [SELF DESTRCUT]: Initiated!"<<endl;
+    system("pause");
+    cout<<"\n [YOU HAVE 22 SECONDS TO EVACUATE!]"<<endl;
+    PlaySound(TEXT("allarm.wav"), NULL, SND_SYNC);
+    cout<<"\n [BOOM!]"<<endl;
+    PlaySound(TEXT("explosion.wav"), NULL, SND_SYNC);
+    cout<<"\n ------------------------------------------------------------------------------"<<endl;
+//-----------------------------------------------------------------------
+    cout<<"\n [This program was made from 12d-11m-2015y until N/Ad-N/Am-2016y] by: ";
+    cout<<"\n [Show or Skip?]: ";
+    cin>>answer;
+    if(answer=="Show")
+    {
+        cout<<" [Password]: ";
+        cin>>answerpass;
+        if(answerpass=="AndrewSwagStyle")
+        {
+            cout<<"\n [Andrew Alexandru]"<<endl;
+        }
+        else
+        {
+            cout<<"\n [System Warning(Error)]: Wrong Password! You cant see [The Developer Of This DataBase Program]"<<endl;
+            PlaySound(TEXT("error.wav"), NULL, SND_SYNC);
+        }
+    }
+    else
+    {
+        cout<<"\n [System]: Succesfully Skiped!"<<endl;
+    }
+//-----------------------------------------------------------------------
+    cout<<"\n";
+    cout<<"\n";
+    cout<<"\n [TOP SECRET GLOBAL INFORMATION]"<<endl;
+    cout<<"\n [Enter or Skip?]: ";
+    cin>>answer1;
+    if(answer1=="Enter")
+    {
+        cout<<"\n [Password]: ";
+        cin>>answerpass1;
+        if(answerpass1=="TopSecretInfoTooSeeInFuture")
+        {
+            cout<<"\n [Current 30d-12m-2015y 18h:37m:19s Global Population]: 7.391.380.500";
+            cout<<"\n [Current 30d-12m-2015y Births]: 307.800";
+            cout<<"\n [Current 30d-12m-2015y Deaths]: 129.000";
+            cout<<"\n [Current 30d-12m-2015y Population Growth]: 179.100";
+            cout<<"\n [Current 2015y Births]: 142.650.500";
+            cout<<"\n [Current 2015y Deaths]: 59.738.200";
+            cout<<"\n [Current 2015y Population Growth]: 82.912.500";
+            cout<<"\n [All of these stats are aproximated at final]"<<endl;
+            cout<<"\n [In 2015y NASA discovered water on planet MARS]";
+            cout<<"\n [Theory]: From NOW(2015y) to 2100y will be over 1 Milion people that will live on planet MARS"<<endl;
+        }
+        else
+        {
+            cout<<"\n [System Warning(Error)]: Wrong Password! You cant acces directory[TOP SECRET INFORMATION]"<<endl;
+            PlaySound(TEXT("error.wav"), NULL, SND_SYNC);
+        }
+    }
+    else
+    {
+        cout<<"\n [System]: Succesfully Skiped!"<<endl;
+    }
+    cout<<"\n ------------------------------------------------------------------------------"<<endl;
+//-----------------------------------------------------------------------
+    cout<<"\n [TOP SECRET GAMING INFORMATION]"<<endl;
+    cout<<"\n [Enter or Skip?]: ";
+    cin>>answer2;
+    if(answer2=="Enter")
+    {
+        cout<<"\n [Password]: ";
+        cin>>answerpass2;
+        if(answerpass2=="TopSecretGamingInfo")
+        {
+            cout<<"\n [From Firsts Years Of Gaming until 2015y Andrew's Gaming Stats]:"<<endl;
+            cout<<"\n [League Of Legends]-[Play Time]: 2 Years"<<endl;
+//
+            cout<<"\n [Counter-Strike:Global Offensive]-[Play Time]: 391 Hours"<<endl;
+//
+            cout<<"\n [Robocraft]-[Play Time]: 488 Hours"<<endl;
+//
+            cout<<"\n [Terraria_(On Steam)]-[Play Time]: 77 Hours"<<endl;
+//
+            cout<<"\n [HearthStone]-[Play Time]: 1 Year"<<endl;
+//
+        }
+        else
+        {
+            cout<<"\n [System Warning(Error)]: Wrong Password! You cant acces directory[TOP SECRET GAMING INFORMATION]"<<endl;
+            PlaySound(TEXT("error.wav"), NULL, SND_SYNC);
+        }
+    }
+    else
+    {
+        cout<<"\n [System]: Succesfully Skiped!"<<endl;
+    }
+    cout<<"\n ------------------------------------------------------------------------------"<<endl;
+//-----------------------------------------------------------------------
+    cout<<"\n [SUPER SECRET INFORMATION]"<<endl;
+    cout<<"\n [Enter or Skip?]: ";
+    cin>>answer3;
+    if(answer3=="Enter")
+    {
+        cout<<"\n [Password(1.0)]: ";
+        cin>>answerpass3;
+        if(answerpass3=="z6z5z4z3z2z1")
+        {
+            cout<<"\n [Password(1.0)] correct"<<endl;
+        }
+        else
+        {
+            cout<<"\n [System Warning(Error)]: Wrong Password! Program Will Shut Down"<<endl;
+            PlaySound(TEXT("error.wav"), NULL, SND_SYNC);
+            PlaySound(TEXT("shutdown.wav"), NULL, SND_SYNC);
+            system("pause");
+            cout<<"\n [System Warning]: Program Shut Downed"<<endl;
+            return 0;
+        }
+        cout<<"\n [Password(1.1)]: ";
+        cin>>answerpass4;
+        if(answerpass4=="YouShallNotPass")
+        {
+            cout<<"\n [Password(1.1)] correct"<<endl;
+        }
+        else
+        {
+            cout<<"\n [System Warning(Error)]: Wrong Password! Program Will Shut Down"<<endl;
+            PlaySound(TEXT("error.wav"), NULL, SND_SYNC);
+            PlaySound(TEXT("shutdown.wav"), NULL, SND_SYNC);
+            system("pause");
+            cout<<"\n [System Warning]: Program Shut Downed"<<endl;
+            return 0;
+        }
+        cout<<"\n [Password(1.2)]: ";
+        cin>>answerpass5;
+        if(answerpass5=="YouAreInDanger")
+        {
+            cout<<"\n [Password(1.2)] correct"<<endl;
+            cout<<"\n directory.[SUPER SECRET INFORMATION]: HACKED"<<endl;
+            cout<<"\n  -------------------------------------------------------------------------------------";
+            cout<<"\n |                                                                                     ";
+            cout<<"\n |                                                                                     ";
+            cout<<"\n | ";
+            cout<<"\n | ";
+            cout<<"\n | ";
+            cout<<"\n | ";
+            cout<<"\n | ";
+            cout<<"\n | ";
+            cout<<"\n | ";
+            cout<<"\n | ";
+            cout<<"\n | ";
+            cout<<"\n | ";
+            cout<<"\n | ";
+            cout<<"\n | ";
+            cout<<"\n | ";
+            cout<<"\n | ";
+            cout<<"\n | ";
+            cout<<"\n | ";
+            cout<<"\n | ";
+            cout<<"\n | ";
+            cout<<"\n |                                                                                     ";
+        }
+        else
+        {
+            cout<<"\n [System Warning(Error)]: Wrong Password! Program Will Shut Down"<<endl;
+            PlaySound(TEXT("error.wav"), NULL, SND_SYNC);
+            PlaySound(TEXT("shutdown.wav"), NULL, SND_SYNC);
+            system("pause");
+            cout<<"\n [System Warning]: Program Shut Downed"<<endl;
+            return 0;
+        }
+    }
+    else
+    {
+        cout<<"\n [System]: Succesfully Skiped!"<<endl;
+    }
+    cout<<"\n ------------------------------------------------------------------------------"<<endl;
+//-----------------------------------------------------------------------
+    string database;
+    cout<<"\n [Show {DataBase Program} or Skip?]: ";
+    cin>>database;
+    if(database=="Show")
+    {
+        mainFunction();
+    }
+    else
+    {
+        cout<<"\n [System]: {DataBase Program} Succesfully Skiped!"<<endl;
+    }
+    cout<<"\n ------------------------------------------------------------------------------"<<endl;
+//-----------------------------------------------------------------------
+    vectorDirectory002();
+//-----------------------------------------------------------------------
+    vectorDirectory001();
+//-----------------------------------------------------------------------
+    cout<<"\n ------------------------------------------------------------------------------"<<endl;
+    cout<<"\n [MINI GAMES]"<<endl;
+    cout<<"\n [1].[PIX WORDS]: (Rules): Enter letters until you enter 'Show'"<<endl;
+    string letter,space="",letter1,space1="";
+    cout<<"\n [Enter letters]: ";
+    cin>>letter; //"a"
+    while(letter!="Show")
+    {
+        letter1=letter;
+        space1=letter1+space1;
+        space=space+letter;
+        cout<<" [Enter letters]: ";
+        cin>>letter;
+    }
+    cout<<"\n [The word you made is]: "<<space<<endl;
+    cout<<"\n [The inverse of the word you made is]: "<<space1<<endl;
+//-----------------------------------------------------------------------
+    cout<<"\n ------------------------------------------------------------------------------"<<endl;
+    cout<<"\n [2].[HALF PYRAMID TIME]: (Rules): Enter a number"<<endl;
+    int number1;
+    int row;
+    int line;
+    cout<<"\n [Enter the number]: ";
+    cin>>number1;
+    cout<<endl;
+    for(row=0; row<=number1; row++)
+    {
+        for(int line=1; line<=row; line++)
+        {
+            cout<<line;
+        }
+        cout<<endl;
+    }
+    cout<<"\n [This is a half pyramid of numbers]"<<endl;
+//-----------------------------------------------------------------------
+    cout<<"\n ------------------------------------------------------------------------------"<<endl;
+    cout<<"\n [3].[SQUARE TIME]: (Rules): Enter a number"<<endl;
+    int number2;
+    int row1;
+    int line1;
+    cout<<"\n [Enter the number]: ";
+    cin>>number2;
+    cout<<endl;
+    for(row1=0; row1<number2; row1++)
+    {
+        for(line1=0; line1<number2; line1++)
+        {
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+    cout<<"\n [This is a square of "<<number2<<"x"<<number2<<"]"<<endl;
+//-----------------------------------------------------------------------
+    cout<<"\n ------------------------------------------------------------------------------"<<endl;
+    int numar,n3,z3;
+    cout<<"\n [Enter a number of numbers]:";
+    cin>>numar;
+    cout<<"\n";
+    for(n3=1; n3<=numar; ++n3)
+    {
+        cout<<" "<<n3<<' ';
+    }
+    cout<<"\n";
+    cout<<"\n Astea sunt numerele naturale nenule in ordine crescatoare de la 1 la "<<numar<<endl;
+//-----------------------------------------------------------------------
+    cout<<"\n ------------------------------------------------------------------------------"<<endl;
+    numar=0;
+    n3=0;
+    z3=0;
+//-----------------------------------------------------------------------
+    cout<<"\n [Enter a number of numbers]:";
+    cin>>numar;
+    cout<<"\n";
+    for(n3=1; n3<=numar; ++n3)
+    {
+        if(n3%2==1)continue;
+        cout<<" "<<n3<<' ';
+    }
+    cout<<"\n";
+    cout<<"\n Astea sunt numerele naturale pare nenule in ordine crescatoare de la 2 pana in "<<numar<<endl;
+//-----------------------------------------------------------------------
+    cout<<"\n ------------------------------------------------------------------------------"<<endl;
+    numar=0;
+    n3=0;
+    z3=0;
+//-----------------------------------------------------------------------
+    cout<<"\n [Enter a number of numbers]:";
+    cin>>numar;
+    cout<<"\n";
+    for(n3=1; n3<=numar; ++n3)
+    {
+        cout<<" "<<numar-n3+1<<' ';
+    }
+    cout<<"\n";
+    cout<<"\n Astea sunt numerele naturale nenule in ordine descrescatoare de la "<<numar<<" la 1"<<endl;
+//-----------------------------------------------------------------------
+    cout<<"\n ------------------------------------------------------------------------------"<<endl;
+    numar=0;
+    n3=0;
+    z3=0;
+//-----------------------------------------------------------------------
+    cout<<"\n [Enter a number of numbers]:";
+    cin>>numar;
+    cout<<"\n";
+    for(int n3=numar-1; n3>0; n3-=2)
+    {
+        cout<<" "<<n3<<' ';
+    }
+    cout<<"\n";
+    cout<<"\n Astea sunt numerele naturale nenule impare in ordine descrescatoare \n de la "<<numar<<" pana in 1"<<endl;
+//-----------------------------------------------------------------------
+    cout<<"\n ------------------------------------------------------------------------------"<<endl;
+    int a=10;
+    cout<<"\n Avem a egal cu 10 deci valorile lui a pana la 25 sunt:\n"<<endl;
+    while(a<25)
+    {
+        cout<<" Valorile lui a: "<<a<<endl;
+        a++;
+    }
+//-----------------------------------------------------------------------
+    cout<<"\n ------------------------------------------------------------------------------"<<endl;
+    int b=10;
+    cout<<"\n Avem b egal cu 10 deci valorile lui b pana la 25 sunt:\n"<<endl;
+    while(b<25)
+    {
+        cout<<" Valorile lui b: "<<b<<endl;
+        b++;
+    }
+//-----------------------------------------------------------------------
+    cout<<"\n ------------------------------------------------------------------------------"<<endl;
+    cout<<"\n [SUM OF GAUSS]"<<endl;
+    cout<<"\n";
+    cout<<"\n Avem un interval de 15 numere numerotate de la 1 la 15, se va afisa suma \n tuturor numerelor, suma fiind Suma lui Gauss"<<endl;
+    for(n=0; n<15; ++n)
+    {
+        result=result+foo[n];
+    }
+    cout<<"\n Suma numerelor este: "<<result<<endl;
+//-----------------------------------------------------------------------
+    cout<<"\n ------------------------------------------------------------------------------"<<endl;
+    cout<<"\n Enter first value of number a:";
+    cin>>a;
+    if(a>1000000000)
+    {
+        cout<<"\n [Error]: The program doesn't work with numbers that are higher than 1000000000 (1 Bilion)"<<endl;
+        PlaySound(TEXT("error.wav"), NULL, SND_SYNC);
+        cout<<"\n [Windows System]: Program will shut down"<<endl;
+        PlaySound(TEXT("shutdown.wav"), NULL, SND_SYNC);
+        system("pause");
+        cout<<"\n [Windows System]: Program power off"<<endl;
+        return 0;
+    }
+    cout<<"\n Enter first value of number b:";
+    cin>>b;
+    if(b>1000000000)
+    {
+        cout<<"\n [Error]: The program doesn't work with numbers that are higher than 1000000000 (1 Bilion)"<<endl;
+        PlaySound(TEXT("error.wav"), NULL, SND_SYNC);
+        cout<<"\n [Windows System]: Program will shut down"<<endl;
+        PlaySound(TEXT("shutdown.wav"), NULL, SND_SYNC);
+        system("pause");
+        cout<<"\n [Windows System]: Program power off"<<endl;
+        return 0;
+    }
+//-----------------------------------------------------------------------
+    if(a<9)
+        cout<<"\n Numarul a este format din aceeasi cifra chiar daca este una singura"<<endl;
+    else if(a%10!=(a/10)%10)
+        cout<<"\n Numarul a nu este format din aceeasi cifra"<<endl;
+    else
+        cout<<"\n Numarul a este format din aceeasi cifra"<<endl;
+//-----------------------------------------------------------------------
+    if(b<9)
+        cout<<"\n Numarul b este format din aceeasi cifra chiar daca este una singura"<<endl;
+    else if(b%10!=(b/10)%10)
+        cout<<"\n Numarul b nu este format din aceeasi cifra"<<endl;
+    else
+        cout<<"\n Numarul b este format din aceeasi cifra"<<endl;
+//-----------------------------------------------------------------------
+    int ab,bc;
+    ab=(a*(a+1))/2;
+    cout<<"\n Suma lui Gauss de la numarul 1 la numarul "<<a<<" este:"<<ab<<endl;
+//-----------------------------------------------------------------------
+    bc=(b*(b+1))/2;
+    cout<<"\n Suma lui Gauss de la numarul 1 la numarul "<<b<<" este:"<<bc<<endl;
+//-----------------------------------------------------------------------
+    cout<<"\n Suma numerelor este:"<<a+b<<endl;
+//-----------------------------------------------------------------------
+    if(a<b)
+        cout<<"\n Diferenta celor doua numere nu se poate efectua deoarece a este mai mic decat b"<<endl;
+    else
+        cout<<"\n Diferenta numerelor este:"<<a-b<<endl;
+//-----------------------------------------------------------------------
+    cout<<"\n Produsul numerelor este:"<<a*b<<endl;
+//-----------------------------------------------------------------------
+    cout<<"\n Catul numerelor este:"<<operate(a,b)<<endl;
+//-----------------------------------------------------------------------
+    cout<<"\n Radical din nuamrul a este:"<<sqrt(a)<<endl;
+    cout<<"\n Radical din numarul b este:"<<sqrt(b)<<endl;
+    cout<<"\n Numarul a la patrat este:"<<a*a<<endl;
+    cout<<"\n Numarul b la patrat este:"<<b*b<<endl;
+//-----------------------------------------------------------------------
+    pow(a,b);
+    if(pow(a,b)>1000000000)
+    {
+        cout<<"\n [Error]: The program doesn't work with numbers that are higher than 1,000,000,000 (1 Bilion)"<<endl;
+        PlaySound(TEXT("error.wav"), NULL, SND_SYNC);
+    }
+    else if(pow(a,b)==1000000000)
+    {
+        cout<<"\n The power of both numbers is 1 bilion"<<endl;
+    }
+    else if(pow(a,b)<1000000000)
+    {
+        cout<<"\n Numarul "<<a<<" la puterea "<<b<<" este:"<<pow(a,b)<<endl;
+    }
+//-----------------------------------------------------------------------
+    pow(b,a);
+    if(pow(b,a)>1000000000)
+    {
+        cout<<"\n [Error]: The program doesn't work with numbers that are higher than 1000000000 (1 Bilion)"<<endl;
+        PlaySound(TEXT("error.wav"), NULL, SND_SYNC);
+    }
+    else if(pow(b,a)==1000000000)
+    {
+        cout<<"\n The power of both numbers is 1 bilion"<<endl;
+    }
+    else if(pow(b,a)<1000000000)
+    {
+        cout<<"\n Numarul "<<b<<" la puterea "<<a<<" este:"<<pow(b,a)<<endl;
+    }
+//-----------------------------------------------------------------------
+    if(a==b)
+        cout<<"\n Numarul a este egal cu b"<<endl;
+    else
+        cout<<"\n Numarul a nu este egal cu b"<<endl;
+//-----------------------------------------------------------------------
+    if(a%2==0)
+        cout<<"\n Numarul a este numar PAR"<<endl;
+    else
+        cout<<"\n Numarul a este numar IMPAR"<<endl;
+//-----------------------------------------------------------------------
+    if(b%2==0)
+        cout<<"\n Numarul b este numar PAR"<<endl;
+    else
+        cout<<"\n Numarul b este numar IMPAR"<<endl;
+//-----------------------------------------------------------------------
+    float m=(a+b)/2.0;
+    m=int(m*100)/100.0;
+    cout<<"\n Media numerelor a si b cu exact patru zecimale nerotunjite este:"<<fixed<<setprecision(4)<<m<<endl;
+//-----------------------------------------------------------------------
+    int man;
+    man=a;
+    a=b;
+    b=man;
+    cout<<"\n Interschimbarea dintre a si b este: "<<a<<' '<<"si"<<' '<<b<<endl;
+//----------------------------------------------------------------------
+    a=a+b;
+    b=a-b;
+    a=a-b;
+//----------------------------------------------------------------------
+    int rast,k;
+    k=a;
+    rast=0;
+    while(a!=0)
+    {
+        rast=rast*10+(a%10);
+        a=a/10;
+    }
+    cout<<"\n Rasturnatul sau oglinditul lui a este:"<<rast<<endl;
+    if(rast==k)
+        cout<<" Numarul a este PALINDROM"<<endl;
+    else
+        cout<<" Numarul a  NU ESTE PALINDROM"<<endl;
+//-----------------------------------------------------------------------
+    k=b;
+    rast=0;
+    while(b!=0)
+    {
+        rast=rast*10+(b%10);
+        b=b/10;
+    }
+    cout<<"\n Rasturnatul sau oglinditul lui b este:"<<rast<<endl;
+    if(rast==k)
+        cout<<" Numarul b este PALINDROM"<<endl;
+    else
+        cout<<" Numarul b  NU ESTE PALINDROM"<<endl;
+//-----------------------------------------------------------------------
+    cout<<"\n";
+    cout<<"\n";
+    cout<<"\n [CONDITION]: NUMERELE CARE VOR FI INTRODUSE NU AU VOIE SA FIE MAI MICI \n DECAT 10, DAR POT FI SI ZERO"<<endl;
+    cout<<"\n";
+    cout<<"\n Enter second value of number a:";
+    cin>>a;
+    if(a>0)
+        cout<<" a este numar POZITIV"<<endl;
+    else if(a==0)
+        cout<<" a este numar NUL"<<endl;
+    else
+        cout<<" a este numar NEGATIV"<<endl;
+//-----------------------------------------------------------------------
+    cout<<"\n Enter second value of number b:";
+    cin>>b;
+    if(b>0)
+        cout<<" b este numar POZITIV"<<endl;
+    else if(b==0)
+        cout<<" b este numar NUL"<<endl;
+    else
+        cout<<" b este numar NEGATIV"<<endl;
+//-----------------------------------------------------------------------
+    int u;
+    u=a%10;
+    while(a>9)
+    {
+        a=a/10;
+    }
+    if(a==0)
+        cout<<"\n Suma dintre prima si ultima cifra a numarului a nu merge deoarece numarul \n introdus este 0"<<endl;
+    else if(a<0)
+        cout<<"\n Suma dintre prima si ultima cifra a numarului a nu merge deoarece numarul \n introdus este negativ"<<endl;
+    else
+        cout<<"\n Suma dintre prima si ultima cifra a numarului a este:"<<u+a<<endl;
+//-----------------------------------------------------------------------
+    u=b%10;
+    while(b>9)
+    {
+        b=b/10;
+    }
+    if(b==0)
+        cout<<"\n Suma dintre prima si ultima cifra a numarului b nu merge deoarece numarul \n introdus este 0"<<endl;
+    else if(b<0)
+        cout<<"\n Suma dintre prima si ultima cifra a numarului b nu merge deoarece numarul \n introdus este negativ"<<endl;
+    else
+        cout<<"\n Suma dintre prima si ultima cifra a numarului b este:"<<u+b<<endl;
+//-----------------------------------------------------------------------
+    cout<<"\n";
+    cout<<"\n";
+    cout<<"\n [COMPARATION BETWEEN TWO NUMBERS]"<<endl;
+    int c,d,e,f;
+    cout<<"\n Exercitiul 1"<<endl;
+    cout<<"\n Introduceti a:";
+    cin>>a;
+    cout<<" Introduceti b:";
+    cin>>b;
+    if(a==b)
+    {
+        cout<<"\n Numerele a si b sunt egale"<<endl;
+    }
+    if(a!=b)
+    {
+        c=(a>b)?a:b;
+        cout<<"\n Dintre numerele a si b pe care le-ati introdus mai mare este:"<<c<<endl;
+    }
+//-----------------------------------------------------------------------
+    cout<<"\n Exercitiul 2"<<endl;
+    cout<<"\n Introduceti a:";
+    cin>>a;
+    cout<<" Introduceti b:";
+    cin>>b;
+    if(a==b)
+    {
+        cout<<"\n Numerele a si b sunt egale"<<endl;
+    }
+    if(a!=b)
+    {
+        d=(a<b)?a:b;
+        cout<<"\n Dintre numerele a si b pe care le-ati introdus mai mic este:"<<d<<endl;
+    }
+//-----------------------------------------------------------------------
+    cout<<"\n Exercitiul 3"<<endl;
+    cout<<"\n Introduceti a:";
+    cin>>a;
+    cout<<" Introduceti b:";
+    cin>>b;
+    if(a==b)
+    {
+        cout<<"\n Numerele a si b sunt egale"<<endl;
+    }
+    if(a!=b)
+    {
+        e=(a>b)?a:b;
+        cout<<"\n Dintre numerele a si b pe care le-ati introdus mai mare este:"<<e<<endl;
+    }
+//-----------------------------------------------------------------------
+    cout<<"\n Exercitiul 4"<<endl;
+    cout<<"\n Introduceti a :";
+    cin>>a;
+    cout<<" Introduceti b :";
+    cin>>b;
+    if(a==b)
+    {
+        cout<<"\n Numerele a si b sunt egale"<<endl;
+    }
+    if(a!=b)
+    {
+        f=(a<b)?a:b;
+        cout<<"\n Dintre numerele a si b pe care le-ati introdus mai mic este:"<<f<<endl;
+    }
+//-----------------------------------------------------------------------
+    cout<<"\n";
+    cout<<"\n";
+    cout<<"\n [DIALOG WITH CONSOLE]"<<endl;
+    string str,stb;//str=name;stb=objects
+    cout<<"\n-Hello mate, whats your name?"<<endl;
+    cout<<"\n-";
+    cin>>str;
+    cout<<"\n-Ooo,"<<' '<<str<<' '<<",that is a beautiful name!"<<endl;
+    cout<<"\n-Tell me please, what do you do in your free time?"<<endl;
+    cout<<"\n-";
+    cin>>stb;
+    cout<<"\n-That is awesome, I do"<<' '<<stb<<' '<<"too!"<<endl;
+    cout<<"\n-"<<str<<", what is your favourite football team?"<<endl;
+    cout<<"\n-";
+    cin>>stb;
+    cout<<"\n-That is very nice, I like"<<' '<<stb<<' '<<"too!"<<endl;
+    cout<<"\n-"<<str<<", do you wanna be friends? Say yes or no."<<endl;
+    cout<<"\n-";
+    cin>>stb;
+    if(stb=="no")
+        cout<<"\n-Oh..., I will never have a friend... :(("<<endl;
+    else
+        cout<<"\n-Yay, we will be best friends forever! :))"<<endl;
+//-----------------------------------------------------------------------
+    int x;
+    cout<<"\n"<<endl;
+    cout<<"\n"<<endl;
+    cout<<"\n\a\a\a EXPLOSION IN...";
+    cin>>x;
+    cout<<"\n\a SECONDS!!!\n"<<endl;
+    cout<<' ';
+    while(x>0)
+    {
+        cout<<x<<"..";
+        --x;
+    }
+    cout<<"\a\a\a\aBOOM!!";
+//----------------------------------------------------------------------
+    cout<<"\n"<<endl;
+    cout<<"\n"<<endl;
+    cout<<"\n Numerele pare din intervalul [0,20] sunt:"<<endl;
+    cout<<"\n";
+    for(int a=20; a>=0; a--)
+    {
+        if(a==19)continue;
+        if(a==17)continue;
+        if(a==15)continue;
+        if(a==13)continue;
+        if(a==11)continue;
+        if(a==9)continue;
+        if(a==7)continue;
+        if(a==5)continue;
+        if(a==3)continue;
+        if(a==1)continue;
+        cout<<' '<<a<<' ';
+    }
+//----------------------------------------------------------------------
+    cout<<"\n";
+    cout<<"\n Numerele impare din intervalul [0,20] sunt:"<<endl;
+    cout<<"\n";
+    for(int b=20; b>=0; b--)
+    {
+        if(b==20)continue;
+        if(b==18)continue;
+        if(b==16)continue;
+        if(b==14)continue;
+        if(b==12)continue;
+        if(b==10)continue;
+        if(b==8)continue;
+        if(b==6)continue;
+        if(b==4)continue;
+        if(b==2)continue;
+        if(b==0)continue;
+        cout<<' '<<b<<' ';
+    }
+//----------------------------------------------------------------------
+    x=0;
+    u=0;
+    d=0;
+    c=0;
+    int g,p,s,i,y; // gipsy XD
+    cout<<"\n";
+    cout<<"\n";
+    cout<<"\n";
+    cout<<"\n [CONDITIE] NUMERELE CARE VOR FI INTRODUSE TREBUIE SA AIBA 5 CIFRE OBLIGATORIU"<<endl;
+    cout<<"\n";
+    cout<<"\n Introdu a treia valoare pentru numarul a:";
+    cin>>a;
+    p=a/100;//numarul introdus fara ultimele doua cifre
+//----------------------------------------------------------------------
+    g=p%10;//cifra din mijloc a numarului introdus
+    u=a%10;//ultima cifra a numarului introdus
+    p=a/10000;//prima cifra a numarului introdus
+    cout<<"\n Cifra din mijloc a numarului a este:"<<g<<endl;
+    s=p+g+u;
+    cout<<"\n Suma dintre prima cifra, cea din mijloc si ultima cifra a numarului a este:"<<s<<endl;
+    d=p-g-u;
+    cout<<"\n Diferenta dintre prima cifra, cea din mijloc si ultima cifra a numarului a \n este:"<<d<<endl;
+    i=p*g*u;
+    cout<<"\n Inmultirea dintre prima cifra, cea din mijloc si ultima cifra a numarului a \n este:"<<i<<endl;
+    c=p/g/u;
+    cout<<"\n Catul dintre prima cifra, cea din mijloc si ultima cifra a numarului a este:"<<c<<endl;
+    s=0;
+    x=(a/1000)%10;//a doua cifra a numarului a
+    y=(a/10)%10;//a patra cifra a numarului a
+    s=p+x+g+y+u;
+    cout<<"\n Suma tuturor cifrelor numarului a este:"<<s<<endl;
+//----------------------------------------------------------------------
+    x=0;
+    u=0;
+    d=0;
+    c=0;
+    g=0;
+    p=0;
+    s=0;
+    i=0;
+    y=0;
+//----------------------------------------------------------------------
+    cout<<"\n";
+    cout<<"\n";
+    cout<<"\n";
+    cout<<"\n Introdu a treia valoare pentru numarul b:";
+    cin>>b;
+    p=b/100;//numarul introdus fara ultimele doua cifre
+//----------------------------------------------------------------------
+    g=p%10;//cifra din mijloc a numarului introdus
+    u=b%10;//ultima cifra a numarului introdus
+    p=b/10000;//prima cifra a numarului introdus
+    cout<<"\n Cifra din mijloc a numarului b este:"<<g<<endl;
+    s=p+g+u;
+    cout<<"\n Suma dintre prima cifra, cea din mijloc si ultima cifra a numarului b este:"<<s<<endl;
+    d=p-g-u;
+    cout<<"\n Diferenta dintre prima cifra, cea din mijloc si ultima cifra a numarului b \n este:"<<d<<endl;
+    i=p*g*u;
+    cout<<"\n Inmultirea dintre prima cifra, cea din mijloc si ultima cifra a numarului b \n este:"<<i<<endl;
+    c=p/g/u;
+    cout<<"\n Catul dintre prima cifra, cea din mijloc si ultima cifra a numarului b este:"<<c<<endl;
+    s=0;
+    x=(b/1000)%10;//a doua cifra a numarului introdus
+    y=(b/10)%10;//a patra cifra a numarului introdus
+    s=p+x+g+y+u;
+    cout<<"\n Suma tuturor cifrelor numarului b este:"<<s<<endl;
+//----------------------------------------------------------------------
+    cout<<"\n";
+    cout<<"\n";
+    cout<<"\n";
+//----------------------------------------------------------------------
+    cout<<"\n [VA TREBUI SA INTRODUCI NUMERE PANA LA APARITIA LUI ZERO]"<<endl;
+    cout<<"\n [Conditie] Numerele pe care o sa le introduci nu au voie sa fie negative"<<endl;
+    int a2,k2;
+    cout<<"\n Introdu numere(primul nu are voie sa fie zero):";
+    cin>>a2;
+    k2=0;
+    while(a2!=0)
+    {
+        if(a2%2==0)
+        {
+            k2=k2+1;
+        }
+        cout<<"\n Introdu numere:";
+        cin>>a2;
+    }
+    if(k2==0)
+        cout<<"\n Inafara de zero, nu exista numere PARE in intervalul pe care l-ai introdus"<<endl;
+    else
+        cout<<"\n Inafara de zero, sunt"<<' '<<k2<<' '<<"numere PARE in intervalul pe care l-ai introdus"<<endl;
+//----------------------------------------------------------------------
+    cout<<"\n";
+    int a3,k3;
+    cout<<"\n Introdu din nou numere(din nou primul nu are voie sa fie zero):";
+    cin>>a3;
+    k3=0;
+    while(a3!=0)
+    {
+        if(a3%2==1)
+        {
+            k3=k3+1;
+        }
+        cout<<"\n Introdu numere:";
+        cin>>a3;
+    }
+    if(k3==0)
+        cout<<"\n Nu exista numere IMPARE in intervalul pe care l-ai introdus"<<endl;
+    else
+        cout<<"\n Sunt"<<' '<<k3<<' '<<"numere IMPARE in intervalul pe care l-ai introdus"<<endl;
+//----------------------------------------------------------------------
+    cout<<"\n";
+    cout<<"\n";
+    cout<<"\n";
+//----------------------------------------------------------------------
+    a=0;
+    b=0;
+    c=0;
+//----------------------------------------------------------------------
+    int factor,contor;
+    cout<<"\n Introdu a patra valoare pentru numarul a:";
+    cin>>a;
+    factor=1;
+    contor=1;
+    while(contor<=a)
+    {
+        factor=factor*contor;
+        contor++;
+    }
+
+    if(factor>1000000000)
+    {
+        cout<<"\n [Error]: The program doesn't work with numbers that are higher than 1000000000 (1 Bilion)"<<endl;
+        PlaySound(TEXT("error.wav"), NULL, SND_SYNC);
+    }
+    else
+    {
+        cout<<"\n FACTORIALUL numarului a este:"<<factor<<endl;
+    }
+//----------------------------------------------------------------------
+    cout<<"\n Introdu a patra valoare pentru numarul b:";
+    cin>>b;
+    factor=1;
+    contor=1;
+    while(contor<=b)
+    {
+        factor=factor*contor;
+        contor++;
+    }
+    if(factor>1000000000)
+    {
+        cout<<"\n [Error]: The program doesn't work with numbers that are higher than 1000000000 (1 Bilion)"<<endl;
+        PlaySound(TEXT("error.wav"), NULL, SND_SYNC);
+    }
+    else
+    {
+        cout<<"\n FACTORIALUL numarului b este:"<<factor<<endl;
+    }
+//----------------------------------------------------------------------
+
+    cout<<"\n Introdu numarul c:";
+    cin>>c;
+    factor=1;
+    contor=1;
+    while(contor<=c)
+    {
+        factor=factor*contor;
+        contor++;
+    }
+    if(factor>1000000000)
+    {
+        cout<<"\n [Error]: The program doesn't work with numbers that are higher than 1000000000 (1 Bilion)"<<endl;
+        PlaySound(TEXT("error.wav"), NULL, SND_SYNC);
+    }
+    else
+    {
+        cout<<"\n FACTORIALUL numarului c este:"<<factor<<endl;
+    }
+//----------------------------------------------------------------------
+    restartProgram();
+    PlaySound(TEXT("shutdown.wav"), NULL, SND_SYNC);
+//----------------------------------------------------------------------
+    getch();
+
+}
+//----------------------------------------------------------------------
+void FillVector(vector<int>& NewMyVector1)
+{
+    int input;
+    cout<<"\n [Type vectors until to zero]: ";
+    cin>>input;
+    while(input!=0)
+    {
+        NewMyVector1.push_back(input);
+        cout<<" [Type vectors]: ";
+        cin>>input;
+    }
+
+}
+//-----------------------------------------------------------------------
+void PrintVector(const vector<int>& NewMyVector1)
+{
+    cout<<"\n [Vector.directory.v2]: ";
+    for(unsigned int i=0; i<NewMyVector1.size(); i++)
+    {
+        cout<<"["<<NewMyVector1[i]<<"]"<<' ';
+    }
+    cout<<"\n";
+}
+//-----------------------------------------------------------------------
+void ReverseVector(const vector<int>& NewMyVector1)
+{
+    cout<<"\n [Vector.directory.v2][Reversed]: ";
+    for(unsigned int i=NewMyVector1.size(); i>0; i--)
+    {
+        cout<<"["<<NewMyVector1[i-1]<<"]"<<' ';
+    }
+    cout<<"\n";
+}
+//-----------------------------------------------------------------------
+void PrintEvens(const vector<int>& NewMyVector1)
+{
+    cout<<"\n [Vector.directory.v2][Evens]: ";
+    for(unsigned int i=0; i<NewMyVector1.size(); i++)
+    {
+        if((NewMyVector1[i]%2)==0)
+        {
+            cout<<"["<<NewMyVector1[i]<<"]"<<' ';
+        }
+
+    }
+    cout<<"\n";
+}
+//-----------------------------------------------------------------------
+void PrintOdds(const vector<int>& NewMyVector1)
+{
+    cout<<"\n [Vector.directory.v2][Odds]: ";
+    for(unsigned int i=0; i<NewMyVector1.size(); i++)
+    {
+        if((NewMyVector1[i]%2)==1)
+        {
+            cout<<"["<<NewMyVector1[i]<<"]"<<' ';
+        }
+
+    }
+    cout<<"\n";
+}
+//-----------------------------------------------------------------------
+void ReplaceVector(vector<int>& NewMyVector1)
+{
+    int old,replace1;
+    cout<<"\n [Type the vectors that you want to replace]: ";
+    cin>>old;
+    cout<<"\n [Type vectors that will replace]: ";
+    cin>>replace1;
+    for(unsigned int i=0; i<NewMyVector1.size(); i++)
+    {
+        if(NewMyVector1[i]==old)
+        {
+            NewMyVector1[i]=replace1;
+        }
+
+    }
+    PrintVector(NewMyVector1);
+}
+//-----------------------------------------------------------------------
+void editFile()
+{
+    string name, input, newName,decision;
+    int age;
+    double salary;
+    ifstream employee("newemployee.txt");
+    if (!employee.eof())
+    {
+        employee >> name >> age >> salary;
+    }
+    system("cls");
+
+    cout << "[Enter DataBase name]: ";
+    cin >> input;
+
+    if (input == name)
+    {
+
+        cout << name << ' ' << age << ' ' << salary << endl;
+        cout << "[Is this the correct DataBase person?]: [y]or[n]";
+        cin >> decision;
+        if (decision == "y")
+        {
+            cout << "[Enter new DataBase name]:";
+            cin >> newName;
+            name = newName;
+        }
+
+        employee.close();
+    }
+
+    ofstream employee2("newemployee.txt", ios::app);
+    employee2 << name << ' ' << age << ' ' << salary << endl;
+    employee2.close();
+    system("pause");
+    mainFunction();
+}
+//-----------------------------------------------------------------------
+void input()
+{
+    string name;
+    int age;
+    long int salary;
+    ofstream newemployee("newemployee.txt", ios::app);
+    system("cls");
+    cout << "[Enter the new person's name: " << endl;
+    cin >> name;
+    cin.sync();
+    system("cls");
+    cout << "[Enter the person's age]: " << endl;
+    cin >> age;
+    system("cls");
+
+    cout << "[Enter the person's yearly salary]: " << endl;
+    cin >> salary;
+
+
+    newemployee << name << ' ' << age << ' ' << salary << endl;
+    newemployee.close();
+    mainFunction();
+}
+//-----------------------------------------------------------------------
+void searchname()
+{
+    ifstream employee("newemployee.txt");
+    string name;
+    string str, line;
+    int age, offset;
+    long int salary;
+    system("CLS");
+    cout << "[Enter the person's name]: ";
+    cin >> str;
+
+    while (employee >> name >> age >> salary)
+    {
+        if (str == name)
+        {
+            system ("CLS");
+            cout << "[Person found]:" << endl;
+            cout << "[Name]" << ' ' << "[Age]" << ' ' << "[Salary]" << endl;
+            cout << "---------------" << endl;
+            cout << name << ' ' << age << ' ' << "$" <<  salary << endl;
+        }
+    }
+
+
+    while (employee >> name )
+    {
+        if (str != name)
+        {
+            system ("CLS") ;
+            cout << "[Nobody under that name exists]" << endl;
+
+        }
+    }
+    system ("pause");
+    mainFunction();
+
+
+}
+void searchage()
+{
+    ifstream employee("newemployee.txt");
+    string name;
+    int age ;
+    int fage;
+    long int salary;
+    system ("CLS");
+    cout << "[Enter the age of an person]: ";
+    cin >> fage;
+    while (employee >> name >> age >> salary)
+    {
+        if (fage == age)
+        {
+            system ("CLS");
+            cout << "[Person(s) found]: " << endl;
+            cout << "[Name]" << ' ' << "[Age]" << ' ' << "[Salary]" << endl;
+            cout << "---------------" << endl;
+            cout << name << ' ' << age << ' ' << "$" << salary << endl;
+        }
+    }
+    while (employee >> age)
+    {
+        if (fage != age)
+        {
+            system ("CLS");
+            cout << "[No person(s) found]: "<< endl;
+
+
+        }
+    }
+    system ("pause");
+    cin.get();
+    mainFunction();
+}
+//-----------------------------------------------------------------------
+void searchsalary()
+{
+    ifstream employee ("newemployee.txt");
+    string name;
+    int age ;
+    long int salary;
+    long int fsalary;
+    system ("CLS");
+    cout << "[Enter a person's salary]: ";
+    cin >> fsalary;
+    while (employee >> name >> age >> salary)
+    {
+        if (fsalary == salary )
+        {
+            system ("cls");
+            cout << "[Employee found]: "<< endl;
+            cout << "[Name]" << ' ' << "[Age]" << ' ' << "[Salary]" << endl;
+            cout << "---------------" << endl;
+            cout << name << ' ' << age << ' ' << "$" << salary << endl;;
+
+        }
+    }
+    while (employee >> salary)
+    {
+        if (fsalary != salary)
+        {
+            system ("CLS");
+            cout << "[No person(s) found]" << endl;
+        }
+    }
+    system("pause");
+    cin.get();
+    mainFunction();
+}
+//-----------------------------------------------------------------------
+void quit()
+{
+    system ("CLS");
+    cout <<" [DataBase Information Program]./Power Off" << endl;
+    system ("pause");
+    cin.get();
+}
+//-----------------------------------------------------------------------
+void quitMenu()
+{
+    system ("CLS");
+    cout <<" [PROGRAM MENU]./Power Off" << endl;
+    system ("pause");
+    cout<<"\n [Program will continue sharing]"<<endl;
+    system("pause");
+    cin.get();
+}
+//-----------------------------------------------------------------------
+void quitProgram()
+{
+    system("cls");
+    cout<<" [DataBase Program]:/[System]:/Power off"<<endl;
+    PlaySound(TEXT("shutdown.wav"), NULL, SND_SYNC);
+    system("pause");
+    exit(0);
+}
+//-----------------------------------------------------------------------
+void quitMusicPlayer()
+{
+    system ("CLS");
+    cout <<" [MUSIC PlayList]./Power Off" << endl;
+    system ("pause");
+    cin.get();
+}
+//-----------------------------------------------------------------------
+void displayall()
+{
+    ifstream employee("newemployee.txt");
+    int age;
+    long int salary;
+    string name;
+    system ("CLS");
+    cout << "[Entered employee database]: "<< endl;
+    cout << "[Name]" << ' ' << "[Age]" << ' ' << "[Salary]" << endl;
+    cout << "---------------" << endl;
+    while (employee >> name >> age >> salary)
+    {
+        cout << name << ' ' << age << ' ' << "$" << salary << endl ;
+    }
+    system ("pause");
+    cin.get();
+    mainFunction();
+
+}
+//-----------------------------------------------------------------------
+void search()
+{
+    int age;
+    string name;
+    long double salary;
+    int choice2;
+    system ("CLS");
+
+    cout << "[1].[Search by name]" << endl;
+    cout << "[2].[Search by age]" << endl;
+    cout << "[3].[Search by salary]" << endl;
+    cout << "[4].[Display all employees]" << endl;
+    cout << "[5].[Back]" << endl;
+    cout << "[6].[Exit program]" << endl;
+    cin >> choice2;
+
+    switch (choice2)
+    {
+    case 1:
+        searchname();
+        break;
+    case 2:
+        searchage();
+        break;
+    case 3:
+        searchsalary();
+        break;
+    case 4:
+        displayall();
+        break;
+    case 5:
+        main();
+        break;
+    case 6:
+        quit();
+        break;
+    }
+
+
+
+
+}
+//-----------------------------------------------------------------------
+void deleteFile()
+{
+
+    string decision;
+    cout << "[Are you sure?]: [y]or[n]" << endl;
+    cin >> decision;
+    if (decision == "y")
+    {
+        ofstream employee("newemployee.txt");
+        system("cls");
+        cout << "[Successfully Deleted!]" << endl;
+        system("pause");
+        employee.close();
+        mainFunction();
+    }
+    else
+    {
+        mainFunction();
+    }
+}
+//-----------------------------------------------------------------------
+void restartProgram()
+{
+    string action;
+    cout<<"\n [Do you want to restart program?]: [y]or[n]: ";
+    cin>>action;
+    if(action=="yes")
+    {
+        cout<<"\n [System]: Program succesfully restarted!"<<endl;
+        system("pause");
+        main();
+    }
+    else
+    {
+        cout<<"\n [System]: Program will shut down"<<endl;
+        system("pause");
+        cout<<"\n [System]: Program shut downed"<<endl;
+    }
+
+}
+//-----------------------------------------------------------------------
+void mainFunction()
+{
+    system ("cls");
+    int choice;
+    cout << "[1].[Enter DataBase name]" << endl;
+    cout << "[2].[Search DataBase for person]" << endl;
+    cout << "[3].[Clear DataBase log]" << endl;
+    cout << "[4].[Edit DataBase file]" << endl;
+    cout << "[5].[Exit DataBase program]" << endl;
+    cin >> choice;
+
+    switch (choice)
+    {
+    case 1:
+        input();
+        break;
+    case 2:
+        search();
+        break;
+    case 3:
+        deleteFile();
+        break;
+    case 4:
+        editFile();
+        break;
+    case 5:
+        quit();
+        break;
+
+        cin.get();
+
+    }
+
+}
+//-----------------------------------------------------------------------
+void mainFunctionWithMenu()
+{
+    system ("cls");
+    int choice;
+    cout << "[1].[Enter DataBase name]" << endl;
+    cout << "[2].[Search DataBase for person]" << endl;
+    cout << "[3].[Clear DataBase log]" << endl;
+    cout << "[4].[Edit DataBase file]" << endl;
+    cout << "[5].[Back to (PROGRAM MENU)]" << endl;
+    cin >> choice;
+
+    switch (choice)
+    {
+    case 1:
+        inputWithMenu();
+        break;
+    case 2:
+        searchWithMenu();
+        break;
+    case 3:
+        deleteFileWithMenu();
+        break;
+    case 4:
+        editFileWithMenu();
+        break;
+    case 5:
+        programMenuFunction();
+        break;
+
+        cin.get();
+
+    }
+
+}
+//-----------------------------------------------------------------------
+void programMenuFunction()
+{
+    int choice1;
+    system("cls");
+    cout<<"__[PROGRAM MENU]__"<<endl;
+    cout<<"\n";
+    cout<<"[1].[Program statistics]"<<endl;
+    cout<<"[2].[Top secret things]"<<endl;
+    cout<<"[3].[DataBase program]"<<endl;
+    cout<<"[4].[Vector directory v1]"<<endl;
+    cout<<"[5].[Vector directory v2]"<<endl;
+    cout<<"[6].[Mini games]"<<endl;
+    cout<<"[7].[Exercices(1)]"<<endl;
+    cout<<"[8].[Functions with two variables(1)]"<<endl;
+    cout<<"[9].[Functions with two variables(2)]"<<endl;
+    cout<<"[10].[Comparation between two numbers]"<<endl;
+    cout<<"[11].[Dialog with console]"<<endl;
+    cout<<"[12].[Explosion]"<<endl;
+    cout<<"[13].[Odds and evens]"<<endl;
+    cout<<"[14].[Numbers with five digits]"<<endl;
+    cout<<"[15].[String with numbers]"<<endl;
+    cout<<"[16].[Factorial numbers]"<<endl;
+    cout<<"[17].[Music playlist (0)]"<<endl;
+    cout<<"[18].[Self destruct alarm]"<<endl;
+    cout<<"[19].[Exit (PROGRAM MENU)-See full program]"<<endl;
+    cout<<"[20].[Exit Program]"<<endl;
+    cin>>choice1;
+
+    switch (choice1)
+    {
+    case 1:
+        programStatistics();
+        break;
+    case 2:
+        topSecretThings();
+        break;
+    case 3:
+        mainFunctionWithMenu();
+        break;
+    case 4:
+        vectorDirectoryV1();
+        break;
+    case 5:
+        vectorDirectoryV2();
+        break;
+    case 6:
+        miniGames();
+        break;
+    case 7:
+        Exercices1();
+        break;
+    case 8:
+        functionsWith2Variables();
+        break;
+    case 9:
+        functionsWith2Variables1();
+        break;
+    case 10:
+        comparationWith2Numbers();
+        break;
+    case 11:
+        dialogWithConsole();
+        break;
+    case 12:
+        Explosion();
+        break;
+    case 13:
+        oddsAndEvens();
+        break;
+    case 14:
+        numbersWith5Digits();
+        break;
+    case 15:
+        stringWithNumbers();
+        break;
+    case 16:
+        factorialNumbers();
+        break;
+    case 17:
+        musicPlayList();
+        break;
+    case 18:
+        bigExplosion();
+        break;
+    case 19:
+        quitMenu();
+        break;
+    case 20:
+        quitProgram();
+        break;
+
+
+        cin.get();
+    }
+
+}
+//-----------------------------------------------------------------------
+void programStatistics()
+{
+    string answer,answerpass;
+    system("cls");
+    cout<<"\n [This program was made from 12d-11m-2015y until N/Ad-N/Am-2016y] by: ";
+    cout<<"\n [Show or Skip?]: ";
+    cin>>answer;
+    if(answer=="Show")
+    {
+        cout<<" [Password]: ";
+        cin>>answerpass;
+        if(answerpass=="AndrewSwagStyle")
+        {
+            cout<<"\n [Andrew Alexandru]"<<endl;
+        }
+        else
+        {
+            cout<<"\n [System Warning(Error)]: Wrong Password! You cant see [The Developer Of This DataBase Program]"<<endl;
+            PlaySound(TEXT("error.wav"), NULL, SND_SYNC);
+        }
+    }
+    else
+    {
+        cout<<"\n [System]: Succesfully Skiped!"<<endl;
+    }
+    system("pause");
+    programMenuFunction();
+}
+//-----------------------------------------------------------------------
+void topSecretThings()
+{
+    string answer1,answerpass1,answer2,answerpass2,answer3,answerpass3,answerpass4,answerpass5;
+    system("cls");
+    cout<<"\n [TOP SECRET GLOBAL INFORMATION]"<<endl;
+    cout<<"\n [Enter or Skip?]: ";
+    cin>>answer1;
+    if(answer1=="Enter")
+    {
+        cout<<"\n [Password]: ";
+        cin>>answerpass1;
+        if(answerpass1=="TopSecretInfoTooSeeInFuture")
+        {
+            cout<<"\n [Current 30d-12m-2015y 18h:37m:19s Global Population]: 7.391.380.500";
+            cout<<"\n [Current 30d-12m-2015y Births]: 307.800";
+            cout<<"\n [Current 30d-12m-2015y Deaths]: 129.000";
+            cout<<"\n [Current 30d-12m-2015y Population Growth]: 179.100";
+            cout<<"\n [Current 2015y Births]: 142.650.500";
+            cout<<"\n [Current 2015y Deaths]: 59.738.200";
+            cout<<"\n [Current 2015y Population Growth]: 82.912.500";
+            cout<<"\n [All of these stats are aproximated at final]"<<endl;
+            cout<<"\n [In 2015y NASA discovered water on planet MARS]";
+            cout<<"\n [Theory]: From NOW(2015y) to 2100y will be over 1 Milion people that will live on planet MARS"<<endl;
+        }
+        else
+        {
+            cout<<"\n [System Warning(Error)]: Wrong Password! You cant acces directory[TOP SECRET INFORMATION]"<<endl;
+            PlaySound(TEXT("error.wav"), NULL, SND_SYNC);
+        }
+    }
+    else
+    {
+        cout<<"\n [System]: Succesfully Skiped!"<<endl;
+    }
+    cout<<"\n ------------------------------------------------------------------------------"<<endl;
+//-----------------------------------------------------------------------
+    cout<<"\n [TOP SECRET GAMING INFORMATION]"<<endl;
+    cout<<"\n [Enter or Skip?]: ";
+    cin>>answer2;
+    if(answer2=="Enter")
+    {
+        cout<<"\n [Password]: ";
+        cin>>answerpass2;
+        if(answerpass2=="TopSecretGamingInfo")
+        {
+            cout<<"\n [From Firsts Years Of Gaming until 2015y Andrew's Gaming Stats]:"<<endl;
+            cout<<"\n [League Of Legends]-[Play Time]: 2 Years"<<endl;
+//
+            cout<<"\n [Counter-Strike:Global Offensive]-[Play Time]: 391 Hours"<<endl;
+//
+            cout<<"\n [Robocraft]-[Play Time]: 488 Hours"<<endl;
+//
+            cout<<"\n [Terraria_(On Steam)]-[Play Time]: 77 Hours"<<endl;
+//
+            cout<<"\n [HearthStone]-[Play Time]: 1 Year"<<endl;
+//
+        }
+        else
+        {
+            cout<<"\n [System Warning(Error)]: Wrong Password! You cant acces directory[TOP SECRET GAMING INFORMATION]"<<endl;
+            PlaySound(TEXT("error.wav"), NULL, SND_SYNC);
+        }
+    }
+    else
+    {
+        cout<<"\n [System]: Succesfully Skiped!"<<endl;
+    }
+    cout<<"\n ------------------------------------------------------------------------------"<<endl;
+//-----------------------------------------------------------------------
+    cout<<"\n [SUPER SECRET INFORMATION]"<<endl;
+    cout<<"\n [Enter or Skip?]: ";
+    cin>>answer3;
+    if(answer3=="Enter")
+    {
+        cout<<"\n [Password(1.0)]: ";
+        cin>>answerpass3;
+        if(answerpass3=="z6z5z4z3z2z1")
+        {
+            cout<<"\n [Password(1.0)] correct"<<endl;
+        }
+        else
+        {
+            cout<<"\n [System Warning(Error)]: Wrong Password! Program Will Shut Down"<<endl;
+            PlaySound(TEXT("error.wav"), NULL, SND_SYNC);
+            PlaySound(TEXT("shutdown.wav"), NULL, SND_SYNC);
+            system("pause");
+            cout<<"\n [System Warning]: Program Shut Downed"<<endl;
+            exit(0);
+        }
+        cout<<"\n [Password(1.1)]: ";
+        cin>>answerpass4;
+        if(answerpass4=="YouShallNotPass")
+        {
+            cout<<"\n [Password(1.1)] correct"<<endl;
+        }
+        else
+        {
+            cout<<"\n [System Warning(Error)]: Wrong Password! Program Will Shut Down"<<endl;
+            PlaySound(TEXT("error.wav"), NULL, SND_SYNC);
+            PlaySound(TEXT("shutdown.wav"), NULL, SND_SYNC);
+            system("pause");
+            cout<<"\n [System Warning]: Program Shut Downed"<<endl;
+            exit(0);
+        }
+        cout<<"\n [Password(1.2)]: ";
+        cin>>answerpass5;
+        if(answerpass5=="YouAreInDanger")
+        {
+            cout<<"\n [Password(1.2)] correct"<<endl;
+            cout<<"\n directory.[SUPER SECRET INFORMATION]: HACKED"<<endl;
+            cout<<"\n  -------------------------------------------------------------------------------------";
+            cout<<"\n |                                                                                     ";
+            cout<<"\n |                                                                                     ";
+            cout<<"\n | ";
+            cout<<"\n | ";
+            cout<<"\n | ";
+            cout<<"\n | ";
+            cout<<"\n | ";
+            cout<<"\n | ";
+            cout<<"\n | ";
+            cout<<"\n | ";
+            cout<<"\n | ";
+            cout<<"\n | ";
+            cout<<"\n | ";
+            cout<<"\n | ";
+            cout<<"\n | ";
+            cout<<"\n | ";
+            cout<<"\n | ";
+            cout<<"\n | ";
+            cout<<"\n | ";
+            cout<<"\n | ";
+            cout<<"\n |                                                                                     ";
+        }
+        else
+        {
+            cout<<"\n [System Warning(Error)]: Wrong Password! Program Will Shut Down"<<endl;
+            PlaySound(TEXT("error.wav"), NULL, SND_SYNC);
+            PlaySound(TEXT("shutdown.wav"), NULL, SND_SYNC);
+            system("pause");
+            cout<<"\n [System Warning]: Program Shut Downed"<<endl;
+            exit(0);
+        }
+    }
+    else
+    {
+        cout<<"\n [System]: Succesfully Skiped!"<<endl;
+    }
+    system("pause");
+    programMenuFunction();
+}
+//-----------------------------------------------------------------------
+void inputWithMenu()
+{
+    string name;
+    int age;
+    long int salary;
+    ofstream newemployee("newemployee.txt", ios::app);
+    system("cls");
+    cout << "[Enter the new person's name: " << endl;
+    cin >> name;
+    cin.sync();
+    system("cls");
+    cout << "[Enter the person's age]: " << endl;
+    cin >> age;
+    system("cls");
+
+    cout << "[Enter the person's yearly salary]: " << endl;
+    cin >> salary;
+
+
+    newemployee << name << ' ' << age << ' ' << salary << endl;
+    newemployee.close();
+    mainFunctionWithMenu();
+}
+//-----------------------------------------------------------------------
+void searchWithMenu()
+{
+    int age;
+    string name;
+    long double salary;
+    int choice2;
+    system ("CLS");
+
+    cout << "[1].[Search by name]" << endl;
+    cout << "[2].[Search by age]" << endl;
+    cout << "[3].[Search by salary]" << endl;
+    cout << "[4].[Display all employees]" << endl;
+    cout << "[5].[Back]" << endl;
+    cout << "[6].[Exit program]" << endl;
+    cin >> choice2;
+
+    switch (choice2)
+    {
+    case 1:
+        searchnameWithMenu();
+        break;
+    case 2:
+        searchageWithMenu();
+        break;
+    case 3:
+        searchsalaryWithMenu();
+        break;
+    case 4:
+        displayallWithMenu();
+        break;
+    case 5:
+        mainFunctionWithMenu();
+        break;
+    case 6:
+        quit();
+        break;
+    }
+
+}
+//-----------------------------------------------------------------------
+void searchnameWithMenu()
+{
+    ifstream employee("newemployee.txt");
+    string name;
+    string str, line;
+    int age, offset;
+    long int salary;
+    system("CLS");
+    cout << "[Enter the person's name]: ";
+    cin >> str;
+
+    while (employee >> name >> age >> salary)
+    {
+        if (str == name)
+        {
+            system ("CLS");
+            cout << "[Person found]:" << endl;
+            cout << "[Name]" << ' ' << "[Age]" << ' ' << "[Salary]" << endl;
+            cout << "---------------" << endl;
+            cout << name << ' ' << age << ' ' << "$" <<  salary << endl;
+        }
+    }
+
+
+    while (employee >> name )
+    {
+        if (str != name)
+        {
+            system ("CLS") ;
+            cout << "[Nobody under that name exists]" << endl;
+
+        }
+    }
+    system ("pause");
+    mainFunctionWithMenu();
+
+
+}
+//-----------------------------------------------------------------------
+void searchageWithMenu()
+{
+    ifstream employee("newemployee.txt");
+    string name;
+    int age ;
+    int fage;
+    long int salary;
+    system ("CLS");
+    cout << "[Enter the age of an person]: ";
+    cin >> fage;
+    while (employee >> name >> age >> salary)
+    {
+        if (fage == age)
+        {
+            system ("CLS");
+            cout << "[Person(s) found]: " << endl;
+            cout << "[Name]" << ' ' << "[Age]" << ' ' << "[Salary]" << endl;
+            cout << "---------------" << endl;
+            cout << name << ' ' << age << ' ' << "$" << salary << endl;
+        }
+    }
+    while (employee >> age)
+    {
+        if (fage != age)
+        {
+            system ("CLS");
+            cout << "[No person(s) found]: "<< endl;
+
+
+        }
+    }
+    system ("pause");
+    cin.get();
+    mainFunctionWithMenu();
+}
+//-----------------------------------------------------------------------
+void searchsalaryWithMenu()
+{
+    ifstream employee ("newemployee.txt");
+    string name;
+    int age ;
+    long int salary;
+    long int fsalary;
+    system ("CLS");
+    cout << "[Enter a person's salary]: ";
+    cin >> fsalary;
+    while (employee >> name >> age >> salary)
+    {
+        if (fsalary == salary )
+        {
+            system ("cls");
+            cout << "[Employee found]: "<< endl;
+            cout << "[Name]" << ' ' << "[Age]" << ' ' << "[Salary]" << endl;
+            cout << "---------------" << endl;
+            cout << name << ' ' << age << ' ' << "$" << salary << endl;;
+
+        }
+    }
+    while (employee >> salary)
+    {
+        if (fsalary != salary)
+        {
+            system ("CLS");
+            cout << "[No person(s) found]" << endl;
+        }
+    }
+    system("pause");
+    cin.get();
+    mainFunctionWithMenu();
+}
+//-----------------------------------------------------------------------
+void displayallWithMenu()
+{
+    ifstream employee("newemployee.txt");
+    int age;
+    long int salary;
+    string name;
+    system ("CLS");
+    cout << "[Entered employee database]: "<< endl;
+    cout << "[Name]" << ' ' << "[Age]" << ' ' << "[Salary]" << endl;
+    cout << "---------------" << endl;
+    while (employee >> name >> age >> salary)
+    {
+        cout << name << ' ' << age << ' ' << "$" << salary << endl ;
+    }
+    system ("pause");
+    cin.get();
+    mainFunctionWithMenu();
+
+}
+//-----------------------------------------------------------------------
+void deleteFileWithMenu()
+{
+
+    string decision;
+    cout << "[Are you sure?]: [y]or[n]" << endl;
+    cin >> decision;
+    if (decision == "y")
+    {
+        ofstream employee("newemployee.txt");
+        system("cls");
+        cout << "[Successfully Deleted!]" << endl;
+        system("pause");
+        employee.close();
+        mainFunctionWithMenu();
+    }
+    else
+    {
+        mainFunctionWithMenu();
+    }
+}
+//-----------------------------------------------------------------------
+void editFileWithMenu()
+{
+    string name, input, newName,decision;
+    int age;
+    double salary;
+    ifstream employee("newemployee.txt");
+    if (!employee.eof())
+    {
+        employee >> name >> age >> salary;
+    }
+    system("cls");
+
+    cout << "[Enter DataBase name]: ";
+    cin >> input;
+
+    if (input == name)
+    {
+
+        cout << name << ' ' << age << ' ' << salary << endl;
+        cout << "[Is this the correct DataBase person?]: [y]or[n]";
+        cin >> decision;
+        if (decision == "y")
+        {
+            cout << "[Enter new DataBase name]:";
+            cin >> newName;
+            name = newName;
+        }
+
+        employee.close();
+    }
+
+    ofstream employee2("newemployee.txt", ios::app);
+    employee2 << name << ' ' << age << ' ' << salary << endl;
+    employee2.close();
+    system("pause");
+    mainFunctionWithMenu();
+}
+//-----------------------------------------------------------------------
+void vectorDirectory002()
+{
+    vector<int>myVector;
+    myVector.push_back(100);
+    myVector.push_back(200);
+    myVector.push_back(300);
+    myVector.push_back(400);
+    myVector.push_back(500);
+//-----------------------------------------------------------------------
+    cout<<"\n [Vector.directory.v1]: ";
+    for(unsigned int i=0; i<myVector.size(); i++)
+    {
+        cout<<"["<<myVector[i]<<"]"<<' ';
+    }
+    cout<<endl;
+//-----------------------------------------------------------------------
+    myVector.insert(myVector.begin()+5,600);
+    cout<<"\n [Vector.directory.v1] = added [v.600]: ";
+    for(unsigned int i=0; i<myVector.size(); i++)
+    {
+        cout<<"["<<myVector[i]<<"]"<<' ';
+    }
+    cout<<endl;
+//-----------------------------------------------------------------------
+    myVector.erase(myVector.begin()+4);
+    cout<<"\n [Vector.directory.v1] = without fifth one: ";
+    for(unsigned int i=0; i<myVector.size(); i++)
+    {
+        cout<<"["<<myVector[i]<<"]"<<' ';
+    }
+    cout<<endl;
+//-----------------------------------------------------------------------
+    cout<<"\n [Vector.directory.v1]: "<<"["<<myVector[0]<<"]"<<" + "<<"["<<myVector[1]<<"] == "<<"["<<myVector[0]+myVector[1]<<"]"<<endl;
+    cout<<"\n [Vector.directory.v1]: "<<"["<<myVector[3]<<"]"<<" - "<<"["<<myVector[2]<<"] == "<<"["<<myVector[3]-myVector[2]<<"]"<<endl;
+    cout<<"\n [Vector.directory.v1]: "<<"["<<myVector[1]<<"]"<<" * "<<"["<<myVector[2]<<"] == "<<"["<<myVector[1]*myVector[2]<<"]"<<endl;
+//-----------------------------------------------------------------------
+    if(myVector.empty())
+    {
+        cout<<"\n [Vector.directory.v1]: Deleted content data<0>;"<<endl;
+    }
+    else
+    {
+        cout<<"\n [Vector.directory.v1]: Contain execution numbers"<<endl;
+    }
+//-----------------------------------------------------------------------
+    myVector.clear();
+    cout<<"\n [Vector.directory.v1]: Execution==>deleted content"<<endl;
+    if(myVector.empty())
+    {
+        cout<<"\n [Vector.directory.v1]: Deleted content data<0>;"<<endl;
+    }
+    else
+    {
+        cout<<"\n [Vector.directory.v1]: Contain execution numbers"<<endl;
+    }
+    cout<<"\n [Vector.directory.v1]: Power Off"<<endl;
+}
+//-----------------------------------------------------------------------
+void vectorDirectoryV1()
+{
+    system("cls");
+    vectorDirectory002();
+    system("pause");
+    programMenuFunction();
+}
+//-----------------------------------------------------------------------
+void vectorDirectory001()
+{
+    vector<int>MyVector1;
+    FillVector(MyVector1);
+    PrintVector(MyVector1);
+    ReverseVector(MyVector1);
+    PrintEvens(MyVector1);
+    PrintOdds(MyVector1);
+    ReplaceVector(MyVector1);
+}
+//-----------------------------------------------------------------------
+void vectorDirectoryV2()
+{
+    system("cls");
+    vectorDirectory001();
+    system("pause");
+    programMenuFunction();
+}
+//-----------------------------------------------------------------------
+void miniGames()
+{
+    system("cls");
+    cout<<"\n [MINI GAMES]"<<endl;
+    cout<<"\n [1].[PIX WORDS]: (Rules): Enter letters until you enter 'Show'"<<endl;
+    string letter,space="",letter1,space1="";
+    cout<<"\n [Enter letters]: ";
+    cin>>letter;
+    while(letter!="Show")
+    {
+        letter1=letter;
+        space1=letter1+space1;
+        space=space+letter;
+        cout<<" [Enter letters]: ";
+        cin>>letter;
+    }
+    cout<<"\n [The word you made is]: "<<space<<endl;
+    cout<<"\n [The inverse of the word you made is]: "<<space1<<endl;
+//-----------------------------------------------------------------------
+    cout<<"\n ------------------------------------------------------------------------------"<<endl;
+    cout<<"\n [2].[HALF PYRAMID TIME]: (Rules): Enter a number"<<endl;
+    int number1;
+    int row;
+    int line;
+    cout<<"\n [Enter the number]: ";
+    cin>>number1;
+    cout<<endl;
+    for(row=0; row<=number1; row++)
+    {
+        for(int line=1; line<=row; line++)
+        {
+            cout<<line;
+        }
+        cout<<endl;
+    }
+    cout<<"\n [This is a half pyramid of numbers]"<<endl;
+//-----------------------------------------------------------------------
+    cout<<"\n ------------------------------------------------------------------------------"<<endl;
+    cout<<"\n [3].[SQUARE TIME]: (Rules): Enter a number"<<endl;
+    int number2;
+    int row1;
+    int line1;
+    cout<<"\n [Enter the number]: ";
+    cin>>number2;
+    cout<<endl;
+    for(row1=0; row1<number2; row1++)
+    {
+        for(line1=0; line1<number2; line1++)
+        {
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+    cout<<"\n [This is a square of "<<number2<<"x"<<number2<<"]"<<endl;
+    system("pause");
+    programMenuFunction();
+}
+//-----------------------------------------------------------------------
+void Exercices1()
+{
+    system("cls");
+    int numar,n3,z3;
+    cout<<"\n [Enter a number of numbers]:";
+    cin>>numar;
+    cout<<"\n";
+    for(n3=1; n3<=numar; ++n3)
+    {
+        cout<<" "<<n3<<' ';
+    }
+    cout<<"\n";
+    cout<<"\n Astea sunt numerele naturale nenule in ordine crescatoare de la 1 la "<<numar<<endl;
+//-----------------------------------------------------------------------
+    cout<<"\n ------------------------------------------------------------------------------"<<endl;
+    numar=0;
+    n3=0;
+    z3=0;
+//-----------------------------------------------------------------------
+    cout<<"\n [Enter a number of numbers]:";
+    cin>>numar;
+    cout<<"\n";
+    for(n3=1; n3<=numar; ++n3)
+    {
+        if(n3%2==1)continue;
+        cout<<" "<<n3<<' ';
+    }
+    cout<<"\n";
+    cout<<"\n Astea sunt numerele naturale pare nenule in ordine crescatoare de la 2 pana in "<<numar<<endl;
+//-----------------------------------------------------------------------
+    cout<<"\n ------------------------------------------------------------------------------"<<endl;
+    numar=0;
+    n3=0;
+    z3=0;
+//-----------------------------------------------------------------------
+    cout<<"\n [Enter a number of numbers]:";
+    cin>>numar;
+    cout<<"\n";
+    for(n3=1; n3<=numar; ++n3)
+    {
+        cout<<" "<<numar-n3+1<<' ';
+    }
+    cout<<"\n";
+    cout<<"\n Astea sunt numerele naturale nenule in ordine descrescatoare de la "<<numar<<" la 1"<<endl;
+//-----------------------------------------------------------------------
+    cout<<"\n ------------------------------------------------------------------------------"<<endl;
+    numar=0;
+    n3=0;
+    z3=0;
+//-----------------------------------------------------------------------
+    cout<<"\n [Enter a number of numbers]:";
+    cin>>numar;
+    cout<<"\n";
+    for(int n3=numar-1; n3>0; n3-=2)
+    {
+        cout<<" "<<n3<<' ';
+    }
+    cout<<"\n";
+    cout<<"\n Astea sunt numerele naturale nenule impare in ordine descrescatoare \n de la "<<numar<<" pana in 1"<<endl;
+//-----------------------------------------------------------------------
+    cout<<"\n ------------------------------------------------------------------------------"<<endl;
+    int a=10;
+    cout<<"\n Avem a egal cu 10 deci valorile lui a pana la 25 sunt:\n"<<endl;
+    while(a<25)
+    {
+        cout<<" Valorile lui a: "<<a<<endl;
+        a++;
+    }
+//-----------------------------------------------------------------------
+    cout<<"\n ------------------------------------------------------------------------------"<<endl;
+    int b=10;
+    cout<<"\n Avem b egal cu 10 deci valorile lui b pana la 25 sunt:\n"<<endl;
+    while(b<25)
+    {
+        cout<<" Valorile lui b: "<<b<<endl;
+        b++;
+    }
+//-----------------------------------------------------------------------
+    cout<<"\n ------------------------------------------------------------------------------"<<endl;
+    cout<<"\n [SUM OF GAUSS]"<<endl;
+    cout<<"\n";
+    cout<<"\n Avem un interval de 15 numere numerotate de la 1 la 15, se va afisa suma \n tuturor numerelor, suma fiind Suma lui Gauss"<<endl;
+    for(n=0; n<15; ++n)
+    {
+        result=result+foo[n];
+    }
+    cout<<"\n Suma numerelor este: "<<result<<endl;
+    system("pause");
+    programMenuFunction();
+}
+//-----------------------------------------------------------------------
+void functionsWith2Variables()
+{
+    int a;
+    int b;
+    system("cls");
+    cout<<"\n Enter first value of number a:";
+    cin>>a;
+    if(a>1000000000)
+    {
+        cout<<"\n [Error]: The program doesn't work with numbers that are higher than 1000000000 (1 Bilion)"<<endl;
+        PlaySound(TEXT("error.wav"), NULL, SND_SYNC);
+        cout<<"\n [Windows System]: Program will shut down"<<endl;
+        PlaySound(TEXT("shutdown.wav"), NULL, SND_SYNC);
+        system("pause");
+        cout<<"\n [Windows System]: Program power off"<<endl;
+        exit(0);
+    }
+    cout<<"\n Enter first value of number b:";
+    cin>>b;
+    if(b>1000000000)
+    {
+        cout<<"\n [Error]: The program doesn't work with numbers that are higher than 1000000000 (1 Bilion)"<<endl;
+        PlaySound(TEXT("error.wav"), NULL, SND_SYNC);
+        cout<<"\n [Windows System]: Program will shut down"<<endl;
+        PlaySound(TEXT("shutdown.wav"), NULL, SND_SYNC);
+        system("pause");
+        cout<<"\n [Windows System]: Program power off"<<endl;
+        exit(0);
+    }
+//-----------------------------------------------------------------------
+    if(a<9)
+        cout<<"\n Numarul a este format din aceeasi cifra chiar daca este una singura"<<endl;
+    else if(a%10!=(a/10)%10)
+        cout<<"\n Numarul a nu este format din aceeasi cifra"<<endl;
+    else
+        cout<<"\n Numarul a este format din aceeasi cifra"<<endl;
+//-----------------------------------------------------------------------
+    if(b<9)
+        cout<<"\n Numarul b este format din aceeasi cifra chiar daca este una singura"<<endl;
+    else if(b%10!=(b/10)%10)
+        cout<<"\n Numarul b nu este format din aceeasi cifra"<<endl;
+    else
+        cout<<"\n Numarul b este format din aceeasi cifra"<<endl;
+//-----------------------------------------------------------------------
+    int ab,bc;
+    ab=(a*(a+1))/2;
+    cout<<"\n Suma lui Gauss de la numarul 1 la numarul "<<a<<" este:"<<ab<<endl;
+//-----------------------------------------------------------------------
+    bc=(b*(b+1))/2;
+    cout<<"\n Suma lui Gauss de la numarul 1 la numarul "<<b<<" este:"<<bc<<endl;
+//-----------------------------------------------------------------------
+    cout<<"\n Suma numerelor este:"<<a+b<<endl;
+//-----------------------------------------------------------------------
+    if(a<b)
+        cout<<"\n Diferenta celor doua numere nu se poate efectua deoarece a este mai mic decat b"<<endl;
+    else
+        cout<<"\n Diferenta numerelor este:"<<a-b<<endl;
+//-----------------------------------------------------------------------
+    cout<<"\n Produsul numerelor este:"<<a*b<<endl;
+//-----------------------------------------------------------------------
+    cout<<"\n Catul numerelor este:"<<operate(a,b)<<endl;
+//-----------------------------------------------------------------------
+    cout<<"\n Radical din nuamrul a este:"<<sqrt(a)<<endl;
+    cout<<"\n Radical din numarul b este:"<<sqrt(b)<<endl;
+    cout<<"\n Numarul a la patrat este:"<<a*a<<endl;
+    cout<<"\n Numarul b la patrat este:"<<b*b<<endl;
+//-----------------------------------------------------------------------
+    pow(a,b);
+    if(pow(a,b)>1000000000)
+    {
+        cout<<"\n [Error]: The program doesn't work with numbers that are higher than 1000000000 (1 Bilion)"<<endl;
+        PlaySound(TEXT("error.wav"), NULL, SND_SYNC);
+    }
+    else if(pow(a,b)==1000000000)
+    {
+        cout<<"\n The power of both numbers is 1 bilion"<<endl;
+    }
+    else if(pow(a,b)<1000000000)
+    {
+        cout<<"\n Numarul "<<a<<" la puterea "<<b<<" este:"<<pow(a,b)<<endl;
+    }
+//-----------------------------------------------------------------------
+    pow(b,a);
+    if(pow(b,a)>1000000000)
+    {
+        cout<<"\n [Error]: The program doesn't work with numbers that are higher than 1000000000 (1 Bilion)"<<endl;
+        PlaySound(TEXT("error.wav"), NULL, SND_SYNC);
+    }
+    else if(pow(b,a)==1000000000)
+    {
+        cout<<"\n The power of both numbers is 1 bilion"<<endl;
+    }
+    else if(pow(b,a)<1000000000)
+    {
+        cout<<"\n Numarul "<<b<<" la puterea "<<a<<" este:"<<pow(b,a)<<endl;
+    }
+//-----------------------------------------------------------------------
+    if(a==b)
+        cout<<"\n Numarul a este egal cu b"<<endl;
+    else
+        cout<<"\n Numarul a nu este egal cu b"<<endl;
+//-----------------------------------------------------------------------
+    if(a%2==0)
+        cout<<"\n Numarul a este numar PAR"<<endl;
+    else
+        cout<<"\n Numarul a este numar IMPAR"<<endl;
+//-----------------------------------------------------------------------
+    if(b%2==0)
+        cout<<"\n Numarul b este numar PAR"<<endl;
+    else
+        cout<<"\n Numarul b este numar IMPAR"<<endl;
+//-----------------------------------------------------------------------
+    float m=(a+b)/2.0;
+    m=int(m*100)/100.0;
+    cout<<"\n Media numerelor a si b cu exact patru zecimale nerotunjite este:"<<fixed<<setprecision(4)<<m<<endl;
+//-----------------------------------------------------------------------
+    int man;
+    man=a;
+    a=b;
+    b=man;
+    cout<<"\n Interschimbarea dintre a si b este: "<<a<<' '<<"si"<<' '<<b<<endl;
+//----------------------------------------------------------------------
+    a=a+b;
+    b=a-b;
+    a=a-b;
+//----------------------------------------------------------------------
+    int rast,k;
+    k=a;
+    rast=0;
+    while(a!=0)
+    {
+        rast=rast*10+(a%10);
+        a=a/10;
+    }
+    cout<<"\n Rasturnatul sau oglinditul lui a este:"<<rast<<endl;
+    if(rast==k)
+        cout<<" Numarul a este PALINDROM"<<endl;
+    else
+        cout<<" Numarul a  NU ESTE PALINDROM"<<endl;
+//-----------------------------------------------------------------------
+    k=b;
+    rast=0;
+    while(b!=0)
+    {
+        rast=rast*10+(b%10);
+        b=b/10;
+    }
+    cout<<"\n Rasturnatul sau oglinditul lui b este:"<<rast<<endl;
+    if(rast==k)
+        cout<<" Numarul b este PALINDROM"<<endl;
+    else
+        cout<<" Numarul b  NU ESTE PALINDROM"<<endl;
+//-----------------------------------------------------------------------
+    system("pause");
+    programMenuFunction();
+}
+//-----------------------------------------------------------------------
+void functionsWith2Variables1()
+{
+    int a;
+    int b;
+    system("cls");
+    cout<<"\n [CONDITION]: NUMERELE CARE VOR FI INTRODUSE NU AU VOIE SA FIE MAI MICI \n DECAT 10, DAR POT FI SI ZERO"<<endl;
+    cout<<"\n";
+    cout<<"\n Enter second value of number a:";
+    cin>>a;
+    if(a>0)
+        cout<<" a este numar POZITIV"<<endl;
+    else if(a==0)
+        cout<<" a este numar NUL"<<endl;
+    else
+        cout<<" a este numar NEGATIV"<<endl;
+//-----------------------------------------------------------------------
+    cout<<"\n Enter second value of number b:";
+    cin>>b;
+    if(b>0)
+        cout<<" b este numar POZITIV"<<endl;
+    else if(b==0)
+        cout<<" b este numar NUL"<<endl;
+    else
+        cout<<" b este numar NEGATIV"<<endl;
+//-----------------------------------------------------------------------
+    int u;
+    u=a%10;
+    while(a>9)
+    {
+        a=a/10;
+    }
+    if(a==0)
+        cout<<"\n Suma dintre prima si ultima cifra a numarului a nu merge deoarece numarul \n introdus este 0"<<endl;
+    else if(a<0)
+        cout<<"\n Suma dintre prima si ultima cifra a numarului a nu merge deoarece numarul \n introdus este negativ"<<endl;
+    else
+        cout<<"\n Suma dintre prima si ultima cifra a numarului a este:"<<u+a<<endl;
+//-----------------------------------------------------------------------
+    u=b%10;
+    while(b>9)
+    {
+        b=b/10;
+    }
+    if(b==0)
+        cout<<"\n Suma dintre prima si ultima cifra a numarului b nu merge deoarece numarul \n introdus este 0"<<endl;
+    else if(b<0)
+        cout<<"\n Suma dintre prima si ultima cifra a numarului b nu merge deoarece numarul \n introdus este negativ"<<endl;
+    else
+        cout<<"\n Suma dintre prima si ultima cifra a numarului b este:"<<u+b<<endl;
+//-----------------------------------------------------------------------
+    system("pause");
+    programMenuFunction();
+}
+//-----------------------------------------------------------------------
+void comparationWith2Numbers()
+{
+    int a;
+    int b;
+    system("cls");
+    cout<<"\n [COMPARATION BETWEEN TWO NUMBERS]"<<endl;
+    int c,d,e,f;
+    cout<<"\n Exercitiul 1"<<endl;
+    cout<<"\n Introduceti a:";
+    cin>>a;
+    cout<<" Introduceti b:";
+    cin>>b;
+    if(a==b)
+    {
+        cout<<"\n Numerele a si b sunt egale"<<endl;
+    }
+    if(a!=b)
+    {
+        c=(a>b)?a:b;
+        cout<<"\n Dintre numerele a si b pe care le-ati introdus mai mare este:"<<c<<endl;
+    }
+//-----------------------------------------------------------------------
+    cout<<"\n Exercitiul 2"<<endl;
+    cout<<"\n Introduceti a:";
+    cin>>a;
+    cout<<" Introduceti b:";
+    cin>>b;
+    if(a==b)
+    {
+        cout<<"\n Numerele a si b sunt egale"<<endl;
+    }
+    if(a!=b)
+    {
+        d=(a<b)?a:b;
+        cout<<"\n Dintre numerele a si b pe care le-ati introdus mai mic este:"<<d<<endl;
+    }
+//-----------------------------------------------------------------------
+    cout<<"\n Exercitiul 3"<<endl;
+    cout<<"\n Introduceti a:";
+    cin>>a;
+    cout<<" Introduceti b:";
+    cin>>b;
+    if(a==b)
+    {
+        cout<<"\n Numerele a si b sunt egale"<<endl;
+    }
+    if(a!=b)
+    {
+        e=(a>b)?a:b;
+        cout<<"\n Dintre numerele a si b pe care le-ati introdus mai mare este:"<<e<<endl;
+    }
+//-----------------------------------------------------------------------
+    cout<<"\n Exercitiul 4"<<endl;
+    cout<<"\n Introduceti a :";
+    cin>>a;
+    cout<<" Introduceti b :";
+    cin>>b;
+    if(a==b)
+    {
+        cout<<"\n Numerele a si b sunt egale"<<endl;
+    }
+    if(a!=b)
+    {
+        f=(a<b)?a:b;
+        cout<<"\n Dintre numerele a si b pe care le-ati introdus mai mic este:"<<f<<endl;
+    }
+    system("pause");
+    programMenuFunction();
+}
+//-----------------------------------------------------------------------
+void dialogWithConsole()
+{
+    system("cls");
+    cout<<"\n [DIALOG WITH CONSOLE]"<<endl;
+    string str,stb;//str=name;stb=objects
+    cout<<"\n-Hello mate, whats your name?"<<endl;
+    cout<<"\n-";
+    cin>>str;
+    cout<<"\n-Ooo,"<<' '<<str<<' '<<",that is a beautiful name!"<<endl;
+    cout<<"\n-Tell me please, what do you do in your free time?"<<endl;
+    cout<<"\n-";
+    cin>>stb;
+    cout<<"\n-That is awesome, I do"<<' '<<stb<<' '<<"too!"<<endl;
+    cout<<"\n-"<<str<<", what is your favourite football team?"<<endl;
+    cout<<"\n-";
+    cin>>stb;
+    cout<<"\n-That is very nice, I like"<<' '<<stb<<' '<<"too!"<<endl;
+    cout<<"\n-"<<str<<", do you wanna be friends? Say yes or no."<<endl;
+    cout<<"\n-";
+    cin>>stb;
+    if(stb=="no")
+        cout<<"\n-Oh..., I will never have a friend... :(("<<endl;
+    else
+        cout<<"\n-Yay, we will be best friends forever! :)"<<endl;
+//-----------------------------------------------------------------------
+    system("pause");
+    programMenuFunction();
+}
+//-----------------------------------------------------------------------
+void Explosion()
+{
+    system("cls");
+    int x;
+    cout<<"\n"<<endl;
+    cout<<"\n"<<endl;
+    cout<<"\n\a\a\a EXPLOSION IN...";
+    cin>>x;
+    cout<<"\n\a SECONDS!!!\n"<<endl;
+    cout<<' ';
+    while(x>0)
+    {
+        cout<<x<<"..";
+        --x;
+    }
+    cout<<"\a\a\a\aBOOM!!";
+    system("pause");
+    programMenuFunction();
+}
+//-----------------------------------------------------------------------
+void oddsAndEvens()
+{
+    system("cls");
+    cout<<"\n Numerele pare din intervalul [0,20] sunt:"<<endl;
+    cout<<"\n";
+    for(int a=20; a>=0; a--)
+    {
+        if(a==19)continue;
+        if(a==17)continue;
+        if(a==15)continue;
+        if(a==13)continue;
+        if(a==11)continue;
+        if(a==9)continue;
+        if(a==7)continue;
+        if(a==5)continue;
+        if(a==3)continue;
+        if(a==1)continue;
+        cout<<' '<<a<<' ';
+    }
+//----------------------------------------------------------------------
+    cout<<"\n";
+    cout<<"\n Numerele impare din intervalul [0,20] sunt:"<<endl;
+    cout<<"\n";
+    for(int b=20; b>=0; b--)
+    {
+        if(b==20)continue;
+        if(b==18)continue;
+        if(b==16)continue;
+        if(b==14)continue;
+        if(b==12)continue;
+        if(b==10)continue;
+        if(b==8)continue;
+        if(b==6)continue;
+        if(b==4)continue;
+        if(b==2)continue;
+        if(b==0)continue;
+        cout<<' '<<b<<' ';
+    }
+    cout<<endl;
+    system("pause");
+    programMenuFunction();
+}
+//-----------------------------------------------------------------------
+void numbersWith5Digits()
+{
+    system("cls");
+    int a;
+    int b;
+    int x;
+    int u;
+    int d;
+    int c;
+    x=0;
+    u=0;
+    d=0;
+    c=0;
+    int g,p,s,i,y;
+    cout<<"\n";
+    cout<<"\n";
+    cout<<"\n";
+    cout<<"\n [CONDITIE] NUMERELE CARE VOR FI INTRODUSE TREBUIE SA AIBA 5 CIFRE OBLIGATORIU"<<endl;
+    cout<<"\n";
+    cout<<"\n Introdu a treia valoare pentru numarul a:";
+    cin>>a;
+    p=a/100;//numarul introdus fara ultimele doua cifre
+//----------------------------------------------------------------------
+    g=p%10;//cifra din mijloc a numarului introdus
+    u=a%10;//ultima cifra a numarului introdus
+    p=a/10000;//prima cifra a numarului introdus
+    cout<<"\n Cifra din mijloc a numarului a este:"<<g<<endl;
+    s=p+g+u;
+    cout<<"\n Suma dintre prima cifra, cea din mijloc si ultima cifra a numarului a este:"<<s<<endl;
+    d=p-g-u;
+    cout<<"\n Diferenta dintre prima cifra, cea din mijloc si ultima cifra a numarului a \n este:"<<d<<endl;
+    i=p*g*u;
+    cout<<"\n Inmultirea dintre prima cifra, cea din mijloc si ultima cifra a numarului a \n este:"<<i<<endl;
+    c=p/g/u;
+    cout<<"\n Catul dintre prima cifra, cea din mijloc si ultima cifra a numarului a este:"<<c<<endl;
+    s=0;
+    x=(a/1000)%10;//a doua cifra a numarului a
+    y=(a/10)%10;//a patra cifra a numarului a
+    s=p+x+g+y+u;
+    cout<<"\n Suma tuturor cifrelor numarului a este:"<<s<<endl;
+//----------------------------------------------------------------------
+    x=0;
+    u=0;
+    d=0;
+    c=0;
+    g=0;
+    p=0;
+    s=0;
+    i=0;
+    y=0;
+//----------------------------------------------------------------------
+    cout<<"\n";
+    cout<<"\n";
+    cout<<"\n";
+    cout<<"\n Introdu a treia valoare pentru numarul b:";
+    cin>>b;
+    p=b/100;//numarul introdus fara ultimele doua cifre
+//----------------------------------------------------------------------
+    g=p%10;//cifra din mijloc a numarului introdus
+    u=b%10;//ultima cifra a numarului introdus
+    p=b/10000;//prima cifra a numarului introdus
+    cout<<"\n Cifra din mijloc a numarului b este:"<<g<<endl;
+    s=p+g+u;
+    cout<<"\n Suma dintre prima cifra, cea din mijloc si ultima cifra a numarului b este:"<<s<<endl;
+    d=p-g-u;
+    cout<<"\n Diferenta dintre prima cifra, cea din mijloc si ultima cifra a numarului b \n este:"<<d<<endl;
+    i=p*g*u;
+    cout<<"\n Inmultirea dintre prima cifra, cea din mijloc si ultima cifra a numarului b \n este:"<<i<<endl;
+    c=p/g/u;
+    cout<<"\n Catul dintre prima cifra, cea din mijloc si ultima cifra a numarului b este:"<<c<<endl;
+    s=0;
+    x=(b/1000)%10;//a doua cifra a numarului introdus
+    y=(b/10)%10;//a patra cifra a numarului introdus
+    s=p+x+g+y+u;
+    cout<<"\n Suma tuturor cifrelor numarului b este:"<<s<<endl;
+//-----------------------------------------------------------------------
+    system("pause");
+    programMenuFunction();
+}
+//-----------------------------------------------------------------------
+void stringWithNumbers()
+{
+    system("cls");
+    cout<<"\n [VA TREBUI SA INTRODUCI NUMERE PANA LA APARITIA LUI ZERO]"<<endl;
+    cout<<"\n [Conditie] Numerele pe care o sa le introduci nu au voie sa fie negative"<<endl;
+    int a2,k2;
+    cout<<"\n Introdu numere(primul nu are voie sa fie zero):";
+    cin>>a2;
+    k2=0;
+    while(a2!=0)
+    {
+        if(a2%2==0)
+        {
+            k2=k2+1;
+        }
+        cout<<"\n Introdu numere:";
+        cin>>a2;
+    }
+    if(k2==0)
+        cout<<"\n Inafara de zero, nu exista numere PARE in intervalul pe care l-ai introdus"<<endl;
+    else
+        cout<<"\n Inafara de zero, sunt"<<' '<<k2<<' '<<"numere PARE in intervalul pe care l-ai introdus"<<endl;
+//----------------------------------------------------------------------
+    cout<<"\n";
+    int a3,k3;
+    cout<<"\n Introdu din nou numere(din nou primul nu are voie sa fie zero):";
+    cin>>a3;
+    k3=0;
+    while(a3!=0)
+    {
+        if(a3%2==1)
+        {
+            k3=k3+1;
+        }
+        cout<<"\n Introdu numere:";
+        cin>>a3;
+    }
+    if(k3==0)
+        cout<<"\n Nu exista numere IMPARE in intervalul pe care l-ai introdus"<<endl;
+    else
+        cout<<"\n Sunt"<<' '<<k3<<' '<<"numere IMPARE in intervalul pe care l-ai introdus"<<endl;
+//----------------------------------------------------------------------
+    system("pause");
+    programMenuFunction();
+}
+//----------------------------------------------------------------------
+void factorialNumbers()
+{
+    system("cls");
+    int factor,contor;
+    int a;
+    int b;
+    int c;
+    cout<<"\n Introdu a patra valoare pentru numarul a:";
+    cin>>a;
+    factor=1;
+    contor=1;
+    while(contor<=a)
+    {
+        factor=factor*contor;
+        contor++;
+    }
+
+    if(factor>1000000000)
+    {
+        cout<<"\n [Error]: The program doesn't work with numbers that are higher than 1000000000 (1 Bilion)"<<endl;
+        PlaySound(TEXT("error.wav"), NULL, SND_SYNC);
+    }
+    else
+    {
+        cout<<"\n FACTORIALUL numarului a este:"<<factor<<endl;
+    }
+//----------------------------------------------------------------------
+    cout<<"\n Introdu a patra valoare pentru numarul b:";
+    cin>>b;
+    factor=1;
+    contor=1;
+    while(contor<=b)
+    {
+        factor=factor*contor;
+        contor++;
+    }
+    if(factor>1000000000)
+    {
+        cout<<"\n [Error]: The program doesn't work with numbers that are higher than 1000000000 (1 Bilion)"<<endl;
+        PlaySound(TEXT("error.wav"), NULL, SND_SYNC);
+    }
+    else
+    {
+        cout<<"\n FACTORIALUL numarului b este:"<<factor<<endl;
+    }
+//----------------------------------------------------------------------
+
+    cout<<"\n Introdu numarul c:";
+    cin>>c;
+    factor=1;
+    contor=1;
+    while(contor<=c)
+    {
+        factor=factor*contor;
+        contor++;
+    }
+    if(factor>1000000000)
+    {
+        cout<<"\n [Error]: The program doesn't work with numbers that are higher than 1000000000 (1 Bilion)"<<endl;
+        PlaySound(TEXT("error.wav"), NULL, SND_SYNC);
+    }
+    else
+    {
+        cout<<"\n FACTORIALUL numarului c este:"<<factor<<endl;
+    }
+    system("pause");
+    programMenuFunction();
+}
+//----------------------------------------------------------------------
+void listenToMusic()
+{
+    PlaySound(TEXT("Disturbed_-_Down_WithThe_Sickness_Ruben_K_Remix_.wav"), NULL, SND_SYNC);
+}
+//----------------------------------------------------------------------
+void listenMusic()
+{
+    string replay;
+    system("cls");
+    cout<<"\n ____________________________________________Disturbed__Down_WithThe_Sickness_Ruben_K_Remix_____________________________________________"<<endl;
+    while(true)
+    {
+        listenToMusic();
+        cout<<"\n [Wanna replay?]: [y]or[n]"<<endl;
+        cin>>replay;
+        if(replay=="yes")
+        {
+            system("cls");
+            cout<<"\n ____________________________________________Disturbed__Down_WithThe_Sickness_Ruben_K_Remix_____________________________________________"<<endl;
+        }
+        else
+        {
+            cout<<"\n [Back to the playlist]>..."<<endl;
+            break;
+        }
+    }
+    system("pause");
+    musicPlayList();
+}
+//----------------------------------------------------------------------
+void listenToMusic1()
+{
+    PlaySound(TEXT("colo.wav"), NULL, SND_SYNC);
+}
+//----------------------------------------------------------------------
+void listenMusic1()
+{
+    string replay;
+    system("cls");
+    cout<<"\n ____________________________________________Harlem_Shake_Remix__________________________________________________________________________"<<endl;
+    while(true)
+    {
+        listenToMusic1();
+        cout<<"\n [Wanna replay?]: [y]or[n]"<<endl;
+        cin>>replay;
+        if(replay=="yes")
+        {
+            system("cls");
+            cout<<"\n ____________________________________________Harlem_Shake_Remix__________________________________________________________________________"<<endl;
+        }
+        else
+        {
+            cout<<"\n [Back to the playlist]>..."<<endl;
+            break;
+        }
+    }
+    system("pause");
+    musicPlayList();
+}
+//----------------------------------------------------------------------
+void listenToMusic2()
+{
+    PlaySound(TEXT("remix.wav"), NULL, SND_SYNC);
+}
+//----------------------------------------------------------------------
+void listenMusic2()
+{
+    string replay;
+    system("cls");
+    cout<<"\n ____________________________________________Windows_Error_Remix_________________________________________________________________________"<<endl;
+    while(true)
+    {
+        listenToMusic2();
+        cout<<"\n [Wanna replay?]: [y]or[n]"<<endl;
+        cin>>replay;
+        if(replay=="yes")
+        {
+            system("cls");
+            cout<<"\n ____________________________________________Windows_Error_Remix_________________________________________________________________________"<<endl;
+        }
+        else
+        {
+            cout<<"\n [Back to the playlist]>..."<<endl;
+            break;
+        }
+    }
+    system("pause");
+    musicPlayList();
+}
+//----------------------------------------------------------------------
+void musicPlayList()
+{
+    int choice2;
+    system("cls");
+    cout<<"[__MUSIC__ PlayList (0)]"<<endl;
+    cout<<"[1].[Down with the sickness(Ruben k remix)]"<<endl;
+    cout<<"[2].[Harlem shake(remix)]"<<endl;
+    cout<<"[3].[Windows error(remix)]"<<endl;
+    cout<<"[4].[Back to {PROGRAM MENU}]" << endl;
+    cin>>choice2;
+
+    switch(choice2)
+    {
+    case 1:
+        listenMusic();
+        break;
+    case 2:
+        listenMusic1();
+        break;
+    case 3:
+        listenMusic2();
+        break;
+    case 4:
+        programMenuFunction();
+        break;
+        cin.get();
+    }
+
+}
+//----------------------------------------------------------------------
+void musicPlayListWithMenu()
+{
+    int choice2;
+    system("cls");
+    cout<<"[__MUSIC__ PlayList (0)]"<<endl;
+    cout<<"[1].[Down with the sickness(Ruben k remix)]"<<endl;
+    cout<<"[2].[Harlem shake(remix)]"<<endl;
+    cout<<"[3].[Windows error(remix)]"<<endl;
+    cout<<"[4].[Exit {MUSIC PlayList (0)}]"<<endl;
+    cin>>choice2;
+
+    switch (choice2)
+    {
+    case 1:
+        listenMusic();
+        break;
+    case 2:
+        listenMusic1();
+        break;
+    case 3:
+        listenMusic2();
+        break;
+    case 4:
+        quitMusicPlayer();
+        break;
+
+
+        cin.get();
+    }
+
+}
+//----------------------------------------------------------------------
+void bigExplosion()
+{
+    system("cls");
+    cout<<"\n [SELF DESTRCUT]: Initiated!"<<endl;
+    system("pause");
+    cout<<"\n [YOU HAVE 22 SECONDS TO EVACUATE!]"<<endl;
+    PlaySound(TEXT("allarm.wav"), NULL, SND_SYNC);
+    cout<<"\n [BOOM!]"<<endl;
+    PlaySound(TEXT("explosion.wav"), nullptr, SND_SYNC);
+    system("pause");
+    programMenuFunction();
+}

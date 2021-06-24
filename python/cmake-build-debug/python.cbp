@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="python"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/alexzander/Alexzander__/programming/cplusplus/python/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/alexzander/Alexzander__/programming/cplusplus/python/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/alexzander/Alexzander__/programming/cplusplus/python/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/alexzander/Alexzander__/programming/cplusplus/python/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/alexzander/Alexzander__/programming/cplusplus/python/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/alexzander/Alexzander__/programming/cplusplus/python/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/alexzander/Alexzander__/programming/cplusplus/python/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/alexzander/Alexzander__/programming/cplusplus/python/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/alexzander/Alexzander__/programming/cplusplus/python/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/alexzander/Alexzander__/programming/cplusplus/python/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/alexzander/Alexzander__/programming/cplusplus/python/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/alexzander/Alexzander__/programming/cplusplus/python/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/alexzander/Alexzander__/programming/cplusplus/python/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/alexzander/Alexzander__/programming/cplusplus/python/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/alexzander/Alexzander__/programming/cplusplus/python/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="python">
+				<Option output="/home/alexzander/Alexzander__/programming/cplusplus/python/cmake-build-debug/python" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/alexzander/Alexzander__/programming/cplusplus/python/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/alexzander/Alexzander__/programming/cplusplus/python/."/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/alexzander/Alexzander__/programming/cplusplus/python/cmake-build-debug/Makefile&quot;  VERBOSE=1 python"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/alexzander/Alexzander__/programming/cplusplus/python/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/alexzander/Alexzander__/programming/cplusplus/python/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/alexzander/Alexzander__/programming/cplusplus/python/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="python/fast">
+				<Option output="/home/alexzander/Alexzander__/programming/cplusplus/python/cmake-build-debug/python" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/alexzander/Alexzander__/programming/cplusplus/python/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/alexzander/Alexzander__/programming/cplusplus/python/."/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/../../../../include/c++/10.2.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/alexzander/Alexzander__/programming/cplusplus/python/cmake-build-debug/Makefile&quot;  VERBOSE=1 python/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/alexzander/Alexzander__/programming/cplusplus/python/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/alexzander/Alexzander__/programming/cplusplus/python/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/alexzander/Alexzander__/programming/cplusplus/python/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/alexzander/Alexzander__/programming/cplusplus/python/BaseException.hpp">
+			<Option target="python"/>
+		</Unit>
+		<Unit filename="/home/alexzander/Alexzander__/programming/cplusplus/python/Char.hpp">
+			<Option target="python"/>
+		</Unit>
+		<Unit filename="/home/alexzander/Alexzander__/programming/cplusplus/python/Dict.hpp">
+			<Option target="python"/>
+		</Unit>
+		<Unit filename="/home/alexzander/Alexzander__/programming/cplusplus/python/Exception.hpp">
+			<Option target="python"/>
+		</Unit>
+		<Unit filename="/home/alexzander/Alexzander__/programming/cplusplus/python/Float.hpp">
+			<Option target="python"/>
+		</Unit>
+		<Unit filename="/home/alexzander/Alexzander__/programming/cplusplus/python/Int.hpp">
+			<Option target="python"/>
+		</Unit>
+		<Unit filename="/home/alexzander/Alexzander__/programming/cplusplus/python/List.hpp">
+			<Option target="python"/>
+		</Unit>
+		<Unit filename="/home/alexzander/Alexzander__/programming/cplusplus/python/NotImplementedError.hpp">
+			<Option target="python"/>
+		</Unit>
+		<Unit filename="/home/alexzander/Alexzander__/programming/cplusplus/python/Object.hpp">
+			<Option target="python"/>
+		</Unit>
+		<Unit filename="/home/alexzander/Alexzander__/programming/cplusplus/python/RuntimeError.hpp">
+			<Option target="python"/>
+		</Unit>
+		<Unit filename="/home/alexzander/Alexzander__/programming/cplusplus/python/STLVectorImplementation.hpp">
+			<Option target="python"/>
+		</Unit>
+		<Unit filename="/home/alexzander/Alexzander__/programming/cplusplus/python/String.hpp">
+			<Option target="python"/>
+		</Unit>
+		<Unit filename="/home/alexzander/Alexzander__/programming/cplusplus/python/Type.hpp">
+			<Option target="python"/>
+		</Unit>
+		<Unit filename="/home/alexzander/Alexzander__/programming/cplusplus/python/TypeError.hpp">
+			<Option target="python"/>
+		</Unit>
+		<Unit filename="/home/alexzander/Alexzander__/programming/cplusplus/python/ValueError.hpp">
+			<Option target="python"/>
+		</Unit>
+		<Unit filename="/home/alexzander/Alexzander__/programming/cplusplus/python/asjibdajisbda.hpp">
+			<Option target="python"/>
+		</Unit>
+		<Unit filename="/home/alexzander/Alexzander__/programming/cplusplus/python/main.cpp">
+			<Option target="python"/>
+		</Unit>
+		<Unit filename="/home/alexzander/Alexzander__/programming/cplusplus/python/pybuiltins.hpp">
+			<Option target="python"/>
+		</Unit>
+		<Unit filename="/home/alexzander/Alexzander__/programming/cplusplus/python/pymath.hpp">
+			<Option target="python"/>
+		</Unit>
+		<Unit filename="/home/alexzander/Alexzander__/programming/cplusplus/python/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,24 @@
+
+PYTHON FUNCTIONALITIES AND DATA STRUCTURES IN THE FREAKING C++  
+==============================================================
+
+quick description:
+    # in this project some great features for C++ are developed for example
+    # the internal functionalities of python are very beautiful constructed 
+    # in C++ for the powerfulness and simplity that Python programming language
+    # comes with and ofcourse if can build them, why not take the chance of 
+    # creating a beautiful set of data structures, aglorithms and functionalities
+    # that can be very easly used in C++ while programming advanced projects
+
+
+last update:
+    - we created class Object and many other classes that inherit Object for example:
+        List, Exception, Int, Float, Char, String ... and many more
+    - we actually managed to create a List data structure that contains any available 
+        data type and also a List itself
+    
+things for the next update:
+    - more copy constructors for every class
+    - more overloaded operators for every class
+    - more append_back and append_front functions for List
+    - more classes that inherit Object

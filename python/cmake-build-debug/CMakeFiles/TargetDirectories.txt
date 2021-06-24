@@ -1,0 +1,3 @@
+/home/alexzander/Alexzander__/programming/cplusplus/python/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/alexzander/Alexzander__/programming/cplusplus/python/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/alexzander/Alexzander__/programming/cplusplus/python/cmake-build-debug/CMakeFiles/python.dir
